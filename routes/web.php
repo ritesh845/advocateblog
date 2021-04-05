@@ -1,0 +1,61 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DomainController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+
+//Don't try directly called view through route please mentation view blade in frontend controller for frontend page
+
+
+//Frontend Controller 
+
+Route::get('/',[App\Http\Controllers\FrontendController::class,'index']);
+
+
+// Route::get('/about',[App\Http\Controllers\FrontendController::class,'about']);
+// Route::get('/directory',[App\Http\Controllers\FrontendController::class,'directory']);
+
+
+
+Auth::routes();
+
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+
+// Route:
+Route::get('/profile',[App\Http\Controllers\ProfileController::class, 'index'])->name('profile.index');
+Route::get('/profile/edit',[App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('/profile/update/{id}',[App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+
+Route::get('/specialization',[App\Http\Controllers\ProfileController::class, 'specialization'])->name('specialization');
+Route::post('/specialization/store',[App\Http\Controllers\ProfileController::class, 'specialization_store'])->name('specialization.store');
+
+Route::get('/qualification',[App\Http\Controllers\ProfileController::class, 'qualification'])->name('qualification');
+Route::post('/qualification/store',[App\Http\Controllers\ProfileController::class, 'qualification_store'])->name('qualification.store');
+
+
+Route::get('/get_cities/{id}', [App\Http\Controllers\FrontendController::class, 'get_cities'])->name('get_cities');
+Route::get('/get_qual/{id}', [App\Http\Controllers\FrontendController::class, 'get_qual'])->name('get_qual');
+
+
+
+
+Route::resource('/post',App\Http\Controllers\PostController::class);
+Route::get('/post/delete/{id}',[App\Http\Controllers\PostController::class,'delete'])->name('post.delete');
+
+Route::get('/domain',[App\Http\Controllers\DomainController::class,'index'])->name('domain.index');
+Route::get('/domain/assgine/',[App\Http\Controllers\DomainController::class,'assigne'])->name('domain.assgine');
+
+
+Route::get('/{catg_name}/{sef_url}',[App\Http\Controllers\FrontendController::class,'post_show']);
+Route::get('/{page_name}',[App\Http\Controllers\FrontendController::class,'page_show']);
