@@ -2763,5 +2763,8 @@ ul.tag-list li a:hover {
 .back-to-top:focus {
   outline: 0;
 }
+.slick-dots{
+  display: none !important; 
+}
 
 /*# sourceMappingURL=maps/style.css.map */
