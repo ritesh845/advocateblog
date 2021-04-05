@@ -1,3 +1,6 @@
+
+    @include('template.partials.slider')
+
     @php 
 		$states = DB::table('states')->select('states.state_code','states.state_name')->limit(15)->get();
 		// $states = DB::table('users')
