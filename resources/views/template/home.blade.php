@@ -171,7 +171,7 @@
             vitae dicta sunt explicabo.</p>
         </div>
         <!-- fun-fact -->
-        <div class="mb-md-50">
+        {{-- <div class="mb-md-50">
           <div class="row">
             <div class="col-4">
               <div class="d-flex flex-column flex-sm-row align-items-center">
@@ -201,42 +201,11 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
       <!-- progressbar -->
       <div class="col-lg-4 offset-lg-1">
-        <div class="progressbar">
-          <h5 class="progressbar-title">Branding</h5>
-          <div class="progress" data-percent="85%">
-            <div class="progress-bar progress-bar-striped" style="width: 85%;">
-              <div class="progress-bar-value">85%</div>
-            </div>
-          </div>
-        </div>
-        <div class="progressbar">
-          <h5 class="progressbar-title">Consulting</h5>
-          <div class="progress" data-percent="90%">
-            <div class="progress-bar progress-bar-striped" style="width: 90%;">
-              <div class="progress-bar-value">90%</div>
-            </div>
-          </div>
-        </div>
-        <div class="progressbar">
-          <h5 class="progressbar-title">Business</h5>
-          <div class="progress" data-percent="75%">
-            <div class="progress-bar progress-bar-striped" style="width: 75%;">
-              <div class="progress-bar-value">75%</div>
-            </div>
-          </div>
-        </div>
-        <div class="progressbar">
-          <h5 class="progressbar-title">Promotion</h5>
-          <div class="progress" data-percent="90%">
-            <div class="progress-bar progress-bar-striped" style="width: 90%;">
-              <div class="progress-bar-value">90%</div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   </div>
