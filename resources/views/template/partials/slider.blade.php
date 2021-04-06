@@ -2,7 +2,7 @@
 <section class="">
   <div class="hero-slider position-relative">
     <div class="hero-slider-item py-160" style="background-image: url('{{asset('slider.jpg')}}');"
-      data-icon="ti-comments" data-text="Consultation">
+      data-icon="ti-comments" data-text="EMAIL SERVICE">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">

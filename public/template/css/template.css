@@ -2764,7 +2764,16 @@ ul.tag-list li a:hover {
   outline: 0;
 }
 .slick-dots{
-  display: none !important; 
+  /*display: none !important; */
+}
+
+.work-slider-image, {
+  height: 321px !important;
+  width:  350px !important;
+}
+.work-slider-image img{
+    height: 321px !important;
+    width:  350px !important;
 }
 
 /*# sourceMappingURL=maps/style.css.map */

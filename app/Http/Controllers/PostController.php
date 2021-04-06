@@ -50,7 +50,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        return $request->all();
         $data =  $this->validation($request);
+        return $data;
         $post = Posts::latest()->firstWhere('user_id',$request->user_id);
         if(!empty($post)){
             $order_num = $post->order_num + 1;
@@ -154,7 +156,7 @@ class PostController extends Controller
             'catg_id'          => $request->catg_id,
             'times_read'    => '0',
         ];
-
+        return $data;
 
         if($request->hasFile('image')){
             $data['image'] = $request->image->getClientOriginalName();

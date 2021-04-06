@@ -28,7 +28,7 @@
                 
                     <div class="col-md-6 form-group d-none" id="catg_type_admin">
                         <label for="category">Catgory</label>
-                         <select name="catg_id" class="form-control" id="catg_id">
+                         <select name="catg_id" class="form-control">
                             <option value="">Select category</option>
                             @foreach(collect($categories)->where('catg_type',1) as $categorie)
                                 <option value="{{$categorie->catg_id}}">{{$categorie->catg_name}}</option>
@@ -40,20 +40,7 @@
                             @enderror
                         </select>
                     </div>
-                    <div class="col-md-6 form-group d-none" id="catg_type_user">
-                        <label for="category">Catgory</label>
-                          <select name="catg_id" class="form-control"  id="catg_id">
-                            <option value="">Select category</option>
-                            @foreach(collect($categories)->where('catg_type',2) as $categorie)
-                                <option value="{{$categorie->catg_id}}">{{$categorie->catg_name}}</option>
-                            @endforeach
-                        </select>
-                         @error('catg_id')
-                            <span class="invalid-feedback d-block" role="alert">
-                            <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+                    
                 </div>        
             @endrole
 
@@ -62,7 +49,7 @@
                  <div class="row">
                     <div class="col-md-6 form-group">
                         <label for="category">Catgory</label>
-                        <select name="catg_id" class="form-control"  id="catg_id">
+                        <select name="catg_id" class="form-control">
                             <option value="">Select category</option>
                             @foreach(collect($categories)->where('catg_type',2) as $categorie)
                                 <option value="{{$categorie->catg_id}}">{{$categorie->catg_name}}</option>

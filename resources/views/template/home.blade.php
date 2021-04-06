@@ -54,7 +54,7 @@
   </div>
 </section> --}}
 
-<section class="section p-0 mb-5">
+<section class="section  mb-5">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-12 text-center">
@@ -207,6 +207,104 @@
       <div class="col-lg-4 offset-lg-1">
        
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-gray">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h5 class="section-title-sm">Our Works</h5>
+        <h2 class="section-title section-title-border-gray">Latest Projects</h2>
+      </div>
+    </div>
+    <!-- work slider -->
+    <div class="row work-slider">
+      <div class="col-lg-4 px-2">
+        <div class="work-slider-image">
+          <img class="img-fluid w-100" src="{{asset('1.jpg')}}" alt="work-image">
+          <div class="image-overlay">
+            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('1.jpg')}}">
+              <i class="ti-search"></i>
+            </a>
+            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
+            <p>by Admin</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 px-2">
+        <div class="work-slider-image">
+          <img class="img-fluid w-100" src="{{asset('12.jpg')}}" alt="work-image">
+          <div class="image-overlay">
+            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('12.jpg')}}">
+              <i class="ti-search"></i>
+            </a>
+            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
+            <p>by Admin</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 px-2">
+        <div class="work-slider-image">
+          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
+          <div class="image-overlay">
+            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
+              <i class="ti-search"></i>
+            </a>
+            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
+            <p>by Admin</p>
+          </div>
+        </div>
+      </div>      
+      <div class="col-lg-4 px-2">
+        <div class="work-slider-image">
+          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
+          <div class="image-overlay">
+            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
+              <i class="ti-search"></i>
+            </a>
+            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
+            <p>by Admin</p>
+          </div>
+        </div>
+      </div>  
+      <div class="col-lg-4 px-2">
+        <div class="work-slider-image">
+          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
+          <div class="image-overlay">
+            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
+              <i class="ti-search"></i>
+            </a>
+            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
+            <p>by Admin</p>
+          </div>
+        </div>
+      </div>  
+      <div class="col-lg-4 px-2">
+        <div class="work-slider-image">
+          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
+          <div class="image-overlay">
+            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
+              <i class="ti-search"></i>
+            </a>
+            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
+            <p>by Admin</p>
+          </div>
+        </div>
+      </div>  
+      <div class="col-lg-4 px-2">
+        <div class="work-slider-image">
+          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
+          <div class="image-overlay">
+            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
+              <i class="ti-search"></i>
+            </a>
+            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
+            <p>by Admin</p>
+          </div>
+        </div>
+      </div>  
     </div>
   </div>
 </section>
