@@ -154,12 +154,22 @@
                 </div>
                 <div class="col-md-6 form-group">
                     <label for="is_slider">Is Slider (Post show on the slider or not?)</label>
-                    <select class="form-control" name="is_slider">
+                    <select class="form-control" name="is_slider" id="is_slider">
                         <option value="0" {{old('is_slider') == '0' ? 'selected="selected' : ''}}>No</option>
                         <option value="1" {{old('is_slider') == '1' ? 'selected="selected' : ''}}>Yes</option>
                     </select>
                 </div>
+                <div class="col-md-6 form-group d-none" id="sliderImg" >
+                    <label for="slider_image">Slider Image</label>
+                    <input type="file" name="slider_image" class="form-control" accept="image/*">
+                    @error('slider_image')
+                        <span class="invalid-feedback d-block" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
             </div>
+
 
             <div class="row">
                 <div class="col-md-6 form-group">
@@ -236,6 +246,23 @@
             fn_get_role_catgs(role_id);
             $('#role').val(role_id);
         });
+        $('#is_slider').on('change',function(e){
+            e.preventDefault();
+            var is_slider = $(this).val();
+            sliderImage(is_slider);
+        });
+
+        var is_slider = "{{old('is_slider')}}";
+        if(is_slider !=''){
+             sliderImage(is_slider);
+        }
+        function sliderImage(is_slider){
+            if(is_slider == '1'){
+                $('#sliderImg').removeClass('d-none');
+            }else{
+                $('#sliderImg').addClass('d-none');
+            }
+        }
 
         var role_id = "{{old('role_id')}}";
         var catg_id = "{{old('catg_id')}}";

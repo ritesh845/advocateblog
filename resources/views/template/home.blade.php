@@ -2,7 +2,7 @@
     @include('template.partials.slider')
 
     @php 
-		$states = DB::table('states')->select('states.state_code','states.state_name')->limit(15)->get();
+        //$posts = Posts::where(['catg_id' => session('catg_id'),'status' => '1','user_id'=>session('user_id')])->get();
 		// $states = DB::table('users')
 	 //     ->select(DB::raw('count(users.id) as state_count, states.state_name,states.state_code'))
 	 //     ->where('users.role_id', '=', 3)
@@ -13,6 +13,11 @@
 	 //     ->limit(15)
 	 //     ->get();
 	@endphp
+    @php 
+        $featurePosts = \App\Models\Posts::where(['catg_id' => '7','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(3);
+
+    @endphp
+
 
 {{-- <section class="mt-5 mb-5">
   <div class="container">
@@ -58,60 +63,27 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-12 text-center">
-        <h5 class="section-title-sm">Best Service</h5>
-        <h2 class="section-title section-title-border">Service We Provide</h2>
+        {{-- <h5 class="section-title-sm"></h5> --}}
+        <h2 class="section-title section-title-border">Features In Email</h2>
       </div>
       <!-- service item -->
-      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-        <div class="card text-center">
-          <h4 class="card-title pt-3">Business Consulting</h4>
-          <div class="card-img-wrapper">
-            <img class="card-img-top rounded-0" src="{{asset('slider.jpg')}}" alt="service-image">
+        @foreach($featurePosts as $key => $featurePost)
+          <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+            <div class="card text-center">
+              <h4 class="card-title pt-3" style="height:60px !important">{{$featurePost->title}}</h4>
+              <div class="card-img-wrapper">
+                <img class="card-img-top rounded-0" src="{{asset($featurePost->image_path !=null ? 'storage/'.$featurePost->image_path : 'no_image.jpg')}}" alt="service-image">
+              </div>
+              <div class="card-body p-0">
+                <i class="square-icon translateY-33 rounded ti-bar-chart"></i>
+                <p class="card-text mx-2 mb-0">{!! Str::limit($featurePost->body,40,$end="...") !!}</p>
+                <a href="service-single.html" class="btn btn-secondary translateY-25">Read
+                  More</a>
+              </div>
+            </div>
           </div>
-          <div class="card-body p-0">
-            <i class="square-icon translateY-33 rounded ti-bar-chart"></i>
-            <p class="card-text mx-2 mb-0">Lorem ipsum dolor amet consecte tur
-              adipisicing elit sed done eius mod tempor enim ad minim veniam quis
-              nostrud.</p>
-            <a href="service-single.html" class="btn btn-secondary translateY-25">Read
-              More</a>
-          </div>
-        </div>
-      </div>
-      <!-- service item -->
-      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-        <div class="card text-center">
-          <h4 class="card-title pt-3">Valuable Idea</h4>
-          <div class="card-img-wrapper">
-            <img class="card-img-top rounded-0" src="{{asset('slider.jpg')}}" alt="service-image">
-          </div>
-          <div class="card-body p-0">
-            <i class="square-icon translateY-33 rounded ti-thought"></i>
-            <p class="card-text mx-2 mb-0">Lorem ipsum dolor amet consecte tur
-              adipisicing elit sed done eius mod tempor enim ad minim veniam quis
-              nostrud.</p>
-            <a href="service-single.html" class="btn btn-secondary translateY-25">Read
-              More</a>
-          </div>
-        </div>
-      </div>
-      <!-- service item -->
-      <div class="col-lg-4 col-sm-6">
-        <div class="card text-center">
-          <h4 class="card-title pt-3">Market Strategy</h4>
-          <div class="card-img-wrapper">
-            <img class="card-img-top rounded-0" src="{{asset('slider.jpg')}}" alt="service-image">
-          </div>
-          <div class="card-body p-0">
-            <i class="square-icon translateY-33 rounded ti-server"></i>
-            <p class="card-text mx-2 mb-0">Lorem ipsum dolor amet consecte tur
-              adipisicing elit sed done eius mod tempor enim ad minim veniam quis
-              nostrud.</p>
-            <a href="service-single.html" class="btn btn-secondary translateY-25">Read
-              More</a>
-          </div>
-        </div>
-      </div>
+      @endforeach
+      
     </div>
   </div>
 </section>

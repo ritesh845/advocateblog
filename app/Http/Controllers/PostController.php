@@ -163,6 +163,11 @@ class PostController extends Controller
             $data['attachment'] = $request->attachment->getClientOriginalName();
             $data['attachment_path'] = file_upload($request->attachment,$request->user_id.'/attachment',$posts,'attachment_path');
         }
+        if($request->hasFile('slider_image')){
+            $data['slider_image'] = file_upload($request->slider_image,$request->user_id.'/image',$posts,'slider_image');
+        }
+        
+        
 
         return $data;
     }

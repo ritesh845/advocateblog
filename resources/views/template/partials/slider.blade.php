@@ -1,17 +1,24 @@
 
+  @php 
+    $sliderPosts = \App\Models\Posts::where(['status' => '1','user_id'=>session('user_id'),'is_slider' => '1'])->orderBy('order_num')->get();
+  @endphp
+
 <section class="">
   <div class="hero-slider position-relative">
-    <div class="hero-slider-item py-160" style="background-image: url('{{asset('slider.jpg')}}');"
-      data-icon="ti-comments" data-text="EMAIL SERVICE">
+
+  @foreach($sliderPosts as $key => $sliderPost)
+    <div class="hero-slider-item py-160" style="height:500px; background-image: url('{{asset($sliderPost->slider_image !=null ? 'storage/'.$sliderPost->slider_image : 'no_image.jpg')}}');"
+      data-icon="ti-comments" data-text="{{$key + 1}}">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-5">
+          </div>
+          <div class="col-lg-7">
             <div class="hero-content text-right">
               
-              <h3 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">
-                PROFESSION DEDICATED EMAIL SERVICE</h3>
-              <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9">Dress & Address <br>Makes The Difference
-              </p>
+              <h1 class="font-weight-bold mb-3 text-white" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">{{$sliderPost->title}}</h1>
+             {{--  <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9">Dress & Address <br>Makes The Difference
+              </p> --}}
               {{-- <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="about.html"
                 class="btn btn-outline text-uppercase">more details</a> --}}
             </div>
@@ -19,6 +26,7 @@
         </div>
       </div>
     </div>
+    @endforeach
    
   </div>
 </section>
