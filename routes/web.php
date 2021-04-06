@@ -26,7 +26,8 @@ Route::get('/',[App\Http\Controllers\FrontendController::class,'index']);
 // Route::get('/about',[App\Http\Controllers\FrontendController::class,'about']);
 // Route::get('/directory',[App\Http\Controllers\FrontendController::class,'directory']);
 
-
+Route::get('/refresh_captcha', [App\Http\Controllers\FrontendController::class, 'refreshCaptcha']);
+Route::post('/contactStore',[App\Http\Controllers\FrontendController::class,'contactStore'])->name('contactStore');
 
 Auth::routes();
 
@@ -46,6 +47,7 @@ Route::post('/qualification/store',[App\Http\Controllers\ProfileController::clas
 
 Route::get('/get_cities/{id}', [App\Http\Controllers\FrontendController::class, 'get_cities'])->name('get_cities');
 Route::get('/get_qual/{id}', [App\Http\Controllers\FrontendController::class, 'get_qual'])->name('get_qual');
+Route::get('/get_role_catgs/{id}', [App\Http\Controllers\FrontendController::class, 'get_role_catgs'])->name('get_role_catgs');
 
 
 
@@ -59,3 +61,4 @@ Route::get('/domain/assgine/',[App\Http\Controllers\DomainController::class,'ass
 
 Route::get('/{catg_name}/{sef_url}',[App\Http\Controllers\FrontendController::class,'post_show']);
 Route::get('/{page_name}',[App\Http\Controllers\FrontendController::class,'page_show']);
+

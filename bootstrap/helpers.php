@@ -16,8 +16,8 @@ if (!function_exists('file_upload')) {
             }
         }
         $name =  time().'_'.$file->getClientOriginalName();
-        $file->storeAs('public/'.date('Y').'/'.date('M').'/'.$folder, $name);
-        $path = date('Y').'/'.date('M').'/'.$folder.'/'.$name;
+        $file->storeAs('public/'.$folder, $name);
+        $path = $folder.'/'.$name;
         return $path;
     }
 }

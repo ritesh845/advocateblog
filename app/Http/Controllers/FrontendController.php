@@ -10,6 +10,7 @@ use App\Models\CatgMast;
 use App\Models\City;
 use App\Models\Posts;
 use App\Models\QualMast;
+use App\Models\Contact;
 use DB;
 class FrontendController extends Controller
 {
@@ -40,6 +41,14 @@ class FrontendController extends Controller
     }
     public function get_qual($id){
         return QualMast::where('qual_catg_code',$id)->get();
+    } 
+    public function get_role_catgs($id){
+        if($id == '3'){
+            $catg_type = 2;
+        }else{
+            $catg_type = 1;
+        }
+        return  CatgMast::select('catg_id','catg_name')->where(['is_post' => '1', 'catg_type' => $catg_type])->orderBy('catg_order')->get();
     }
 
    
@@ -53,5 +62,32 @@ class FrontendController extends Controller
         $posts = Posts::where(['catg_id' => session('catg_id'),'status' => '1','user_id'=>session('user_id')])->get();
 
         return view('pages.index',compact('posts','page_name'));
+    }
+    public function contactStore(Request $request){
+        
+        $request->validate([
+            'name'      => 'required',
+            'email'     => 'required|email',
+            'mobile'    => 'required|min:10|max:10',
+            'subject'   => 'required|min:4|max:100',
+            'message'   => 'required',
+            'captcha'   => 'required|captcha',
+        ],
+        [
+            'captcha.captcha'=>'Invalid captcha code.'
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'mobile' => $request->mobile,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ];
+        Contact::create($data);
+        return redirect()->back()->with(['success'=>'Thank You! For Contact Us. We Will Contact You Soon...']);
+    }
+    public function refreshCaptcha() {  
+        return captcha_img('flat');
     }
 }

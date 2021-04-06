@@ -11,7 +11,13 @@
   			</div>
   		</div>
   		<div class="row">
+
   			<div class="col-md-12 table-responsive">
+           @if($message = Session::get('success'))
+            <div class="alert alert-success">
+                {{$message}}
+            </div>
+         @endif 
   				<table class="table table-bordered table-striped">
   					<thead>
   						<tr>

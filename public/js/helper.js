@@ -35,3 +35,21 @@ function fn_get_qual(qualCatgCode,oldQualCatgCode =''){
     }
    
 }
+function fn_get_role_catgs(role_id,oldCatgId =''){
+    if(role_id !='0'){
+         $.ajax({
+            type:'get',
+            url:"/get_role_catgs/"+role_id,
+            success:function(res){
+                $('#catg').empty();
+                $('#catg').append('<option value="">Select Catgeory</option>');
+                $.each(res,function(i,v){
+                    $('#catg').append('<option value="'+v.catg_id+'" '+(oldCatgId == v.catg_id ? 'selected' : '')+'> '+v.catg_name+' </option>')
+                })
+            }
+        });
+    }else{
+        $('#qual_sub').empty();
+    }
+   
+}

@@ -22,8 +22,6 @@ class PostController extends Controller
             $posts = Posts::orderBy('order_num')->cursor();
         }
 
-
-      
         return view('backend.posts.index',compact('posts'));
     }
 
@@ -35,9 +33,8 @@ class PostController extends Controller
     public function create()
     {
         $users  = User::select('id','name','role_id')->orderBy('name')->cursor();
+        
         $categories = CatgMast::where('is_post','1')->orderBy('catg_order')->get();
-
-
 
         return view('backend.posts.create',compact('users','categories'));
     }
@@ -50,9 +47,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        // return $request->all();
         $data =  $this->validation($request);
-        return $data;
         $post = Posts::latest()->firstWhere('user_id',$request->user_id);
         if(!empty($post)){
             $order_num = $post->order_num + 1;
@@ -63,7 +59,7 @@ class PostController extends Controller
         $data['order_num'] = $order_num;
 
         Posts::create($data);
-        return redirect()->back()->with('success','Post Created Successfully');
+        return redirect()->route('post.index')->with('success','Post Created Successfully');
     }
 
     /**
@@ -86,8 +82,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $users  = User::select('id','name')->where('role_id','3')->orderBy('name')->cursor();
+        $users  = User::select('id','name','role_id')->orderBy('name')->cursor();
         $post = Posts::find($id);
+
         return view('backend.posts.edit',compact('users','post'));
     }
 
@@ -103,7 +100,7 @@ class PostController extends Controller
         $post =  Posts::find($id);
         $data = $this->validation($request,$post);
         $post->update($data);
-        return redirect()->back()->with('success','Post Updated Successfully');
+        return redirect()->route('post.index')->with('success','Post Updated Successfully');
     }
 
     /**
@@ -128,11 +125,11 @@ class PostController extends Controller
     }
     public function validation($request, $posts =[]){
         $request->validate([
-                'title'      => 'required|min:10|max:150',
+                'title'      => 'required|min:5|max:150',
                 'start_date' => 'required',
                 'body'       => 'required',
-                'meta_title'  => 'required|min:10',
-                'meta_description'=> 'required|min:10',
+                'meta_title'  => 'required|min:4',
+                'meta_description'=> 'required|min:4',
                 'meta_keywords'   => 'required',
                 'image'      => 'nullable',
                 'user_id'      => 'required',
@@ -154,17 +151,17 @@ class PostController extends Controller
             'meta_description' => $request->meta_description,
             'meta_keywords'    => $request->meta_keywords,
             'catg_id'          => $request->catg_id,
+            'is_slider'          => $request->is_slider,
             'times_read'    => '0',
         ];
-        return $data;
 
         if($request->hasFile('image')){
             $data['image'] = $request->image->getClientOriginalName();
-            $data['image_path'] = file_upload($request->image,'posts',$posts,'image_path');
+            $data['image_path'] = file_upload($request->image,$request->user_id.'/image',$posts,'image_path');
         }
         if($request->hasFile('attachment')){
             $data['attachment'] = $request->attachment->getClientOriginalName();
-            $data['attachment_path'] = file_upload($request->attachment,'posts/attachment',$posts,'attachment_path');
+            $data['attachment_path'] = file_upload($request->attachment,$request->user_id.'/attachment',$posts,'attachment_path');
         }
 
         return $data;

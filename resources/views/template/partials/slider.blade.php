@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="hero-content">
+            <div class="hero-content text-right">
               
               <h3 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">
                 PROFESSION DEDICATED EMAIL SERVICE</h3>

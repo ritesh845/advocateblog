@@ -7,26 +7,66 @@
          </h5>
     </div>
     <div class="card-body">
+        
         <form action="{{route('post.update',$post->article_id)}}" method="post" enctype="multipart/form-data" autocomplete="off">
             @csrf
             @method('patch')
+                <input type="hidden" name="role_id" value="" id="role">
+            @csrf
             @role('admin|super_admin')
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label>Select User</label>
-                        <select name="user_id" class="form-control" required="required">
+                        <label for="user_id">Select User</label>
+                        <select name="user_id" class="form-control" required="required" id="user_id">
                             <option value="">Select User</option>
                             @foreach($users as $user)
-                                <option value="{{$user->id}}" {{$post->user_id == $user->id ? 'selected="selected"' : ''}}>{{$user->name}}</option>
+                                <option value="{{$user->id}}" data-id="{{$user->role_id}}"  {{(old('user_id')  ?? $post->user_id) == $user->id ? 'selected="selected"' : ''}}>{{$user->name}}</option>
                             @endforeach
                         </select>
+                         @error('user_id')
+                            <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
-                </div>            
+                
+                    <div class="col-md-6 form-group">
+                        <label for="category">Catgory</label>
+                         <select name="catg_id" class="form-control" id="catg">
+                            <option value="">Select category</option>
+                                                         
+                        </select>
+                        @error('catg_id')
+                                <span class="invalid-feedback d-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                    </div>
+                    
+                </div>        
             @endrole
 
             @role('user')
                 <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+          
+                 <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="category">Catgory</label>
+                        <select name="catg_id" class="form-control">
+                            <option value="">Select category</option>
+                            @foreach(collect($categories)->where('catg_type',2) as $categorie)
+                                <option value="{{$categorie->catg_id}}">{{$categorie->catg_name}}</option>
+                            @endforeach
+                        </select>
+                        @error('catg_id')
+                            <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
             @endrole
+
 
             <div class="row">
                 <div class="col-md-6 form-group">
@@ -106,12 +146,20 @@
                     <input type="file" name="images[]" class="form-control" accept="image/*">
                 </div>
             </div> --}}
-            <div class="row">
+           
+             <div class="row">
                 <div class="col-md-6 form-group">
                     <label for="status">Status</label>
                     <select class="form-control" name="status">
-                        <option value="1" {{$post->status == '1' ? 'selected="selected"' : ''}}>Active</option>
-                        <option value="0" {{$post->status == '0' ? 'selected="selected"' : ''}}>Not Active</option>
+                        <option value="1" {{(old('status') ?? $post->status) == '1' ? 'selected' : ''}}>Active</option>
+                        <option value="0" {{(old('status') ?? $post->status) == '0' ? 'selected' : ''}}>Not Active</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="is_slider">Is Slider (Post show on the slider or not?)</label>
+                    <select class="form-control" name="is_slider">
+                        <option value="0" {{(old('is_slider') ?? $post->is_slider) == '0' ? 'selected="selected' : ''}}>No</option>
+                        <option value="1" {{(old('is_slider') ?? $post->is_slider) == '1' ? 'selected="selected' : ''}}>Yes</option>
                     </select>
                 </div>
             </div>
@@ -176,14 +224,28 @@
             'setDate': new Date()
         });
 
-
         $('#title').blur(function(e){
             var text = document.getElementById("title").value;
             str = text.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, ' ').toLowerCase();
             str = str.replace(/^\s+|\s+$/gm,'');
-            str = str.replace(/\s+/g, '-');   
+            str = str.replace(/\s+/g, '-')+'.html';   
             $("#sefriendly").val(str); 
         });
+
+        $('#user_id').on('change',function(e){
+            e.preventDefault();
+            var role_id = $(this).find(':selected').data('id');
+            fn_get_role_catgs(role_id);
+            $('#role').val(role_id);
+        });
+
+        var role_id = "{{old('role_id') ?? $post->user->role_id}}";
+        var catg_id = "{{old('catg_id') ?? $post->catg_id}}";
+        if(role_id !=''){
+            fn_get_role_catgs(role_id,catg_id);
+        }
+
+   
 
     });
 </script>

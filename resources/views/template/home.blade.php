@@ -54,7 +54,7 @@
   </div>
 </section> --}}
 
-<section class="section  mb-5">
+<section class="section ">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-12 text-center">
@@ -305,6 +305,223 @@
           </div>
         </div>
       </div>  
+    </div>
+  </div>
+</section>
+
+<section class="mission section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h5 class="section-title-sm">Our Goal</h5>
+        <h2 class="section-title section-title-border-half">Company Mission</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="mb-40">Lorem ipsum dolor sit amet consectetur adipisicing elit sed
+              eiusmod tempor didunt laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- accordion -->
+        <div id="accordion" class="mb-md-50">
+          <div class="card border-0 mb-4">
+            <div class="card-header bg-gray border p-0">
+              <a class="card-link h5 d-block tex-dark mb-0 py-10 px-4" data-toggle="collapse" href="#collapseOne">
+                <i class="ti-minus text-primary mr-2"></i> Our Company Mission
+              </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+              <div class="card-body font-secondary text-color pl-0 pb-0">
+                Duis aute irure dolor in reprehenderit voluptate velit esse cillum
+                dolore fugiat nulla pariatur.Excepteur sint ocaecat cupidatat
+                non proident sunt culpa qui officia deserunt mollit anim id est
+                laborum.
+              </div>
+            </div>
+          </div>
+          <div class="card border-0 mb-4">
+            <div class="card-header bg-gray border p-0">
+              <a class="collapsed card-link h5 d-block tex-dark mb-0 py-10 px-4" data-toggle="collapse"
+                href="#collapseTwo">
+                <i class="ti-plus text-primary mr-2"></i> Our Company Mission
+              </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+              <div class="card-body font-secondary text-color pl-0 pb-0">
+                Duis aute irure dolor in reprehenderit voluptate velit esse cillum
+                dolore fugiat nulla pariatur.Excepteur sint ocaecat cupidatat
+                non proident sunt culpa qui officia deserunt mollit anim id est
+                laborum.
+              </div>
+            </div>
+          </div>
+          <div class="card border-0 mb-4">
+            <div class="card-header bg-gray border p-0">
+              <a class="collapsed card-link h5 d-block tex-dark mb-0 py-10 px-4" data-toggle="collapse"
+                href="#collapseThree">
+                <i class="ti-plus text-primary mr-2"></i> Our Company Mission
+              </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+              <div class="card-body font-secondary text-color pl-0 pb-0">
+                Duis aute irure dolor in reprehenderit voluptate velit esse cillum
+                dolore fugiat nulla pariatur.Excepteur sint ocaecat cupidatat
+                non proident sunt culpa qui officia deserunt mollit anim id est
+                laborum.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- chart -->
+      <div class="col-lg-6">
+            
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="promo-video overlay section" style="background-image: url({{asset('1234.webp')}});">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="text-white mb-20 font-weight-normal">We Are Alawys <br> Comited</h1>
+        <div class="d-flex">
+          <a class="popup-youtube play-icon mr-4" href="https://www.youtube.com/watch?v=6ZfuNTqbHE8">
+            <i class="ti-control-play"></i>
+          </a>
+          <p class="text-white align-self-center h4">Lorem ipsum dolor <br> sit amet con.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h5 class="section-title-sm">Clients</h5>
+                <h2 class="section-title section-title-border"> What client Say </h2>
+            </div>
+            <div class="col-lg-5 col-md-5 pr-0 align-self-center">
+                <img class="img-fluid w-100" src="images/client.png" alt="clients-image">
+            </div>
+            <div class="col-lg-7 col-md-7 align-self-center pl-0">
+                <div class="testimonial-slider p-5">
+                    <!-- slider item -->
+                    <div class="outline-0">
+                        <i class="testimonial-icon ti-quote-left"></i>
+                        <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi aliquip excepteur.</p>
+                        <h4 class="font-weight-normal">Julia Robertson</h4>
+                        <h6 class="font-secondary text-color">Happy Clients</h6>
+                    </div>
+                    <!-- slider item -->
+                    <div class="outline-0">
+                        <i class="testimonial-icon ti-quote-left"></i>
+                        <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi aliquip excepteur.</p>
+                        <h4 class="font-weight-normal">Julia Robertson</h4>
+                        <h6 class="font-secondary text-color">Happy Clients</h6>
+                    </div>
+                    <!-- slider item -->
+                    <div class="outline-0">
+                        <i class="testimonial-icon ti-quote-left"></i>
+                        <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi aliquip excepteur.</p>
+                        <h4 class="font-weight-normal">Julia Robertson</h4>
+                        <h6 class="font-secondary text-color">Happy Clients</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta overlay-primary py-50 text-center text-lg-left" style="background-image: url({{asset('1.jpg')}});">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-6">
+                    <h3 class="text-white">Advocate Mail give the smart solution for your business</h3>
+                </div>
+                <div class="col-lg-6 text-lg-right align-self-center">
+                    <a href="contact.html" class="btn btn-light">GET AN QUOTE</a>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="section bg-gray">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 text-center">
+        <h5 class="section-title-sm">Latest News</h5>
+        <h2 class="section-title section-title-border-gray"> News</h2>
+      </div>
+      <!-- blog-item -->
+      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+        <div class="card">
+          <div class="card-img-wrapper overlay-rounded-top">
+            <img class="card-img-top" src="{{asset('12.jpg')}}" alt="blog-thumbnail">
+          </div>
+          <div class="card-body p-0">
+            <div class="d-flex">
+              <div class="py-3 px-4 border-right text-center">
+                <h3 class="text-primary mb-0">25</h3>
+                <p class="mb-0">Nov</p>
+              </div>
+              <div class="p-3">
+                <a href="blog-single.html" class="h4 font-primary text-dark">Cras
+                  sed elit sit amet.</a>
+                <p>by Admin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- blog-item -->
+      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+        <div class="card">
+          <div class="card-img-wrapper overlay-rounded-top">
+            <img class="card-img-top"  src="{{asset('123.jpg')}}" alt="blog-thumbnail">
+          </div>
+          <div class="card-body p-0">
+            <div class="d-flex">
+              <div class="py-3 px-4 border-right text-center">
+                <h3 class="text-primary mb-0">25</h3>
+                <p class="mb-0">Nov</p>
+              </div>
+              <div class="p-3">
+                <a href="blog-single.html" class="h4 font-primary text-dark">Cras
+                  sed elit sit amet.</a>
+                <p>by Admin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+        <div class="card">
+          <div class="card-img-wrapper overlay-rounded-top">
+            <img class="card-img-top"  src="{{asset('123.jpg')}}" alt="blog-thumbnail">
+          </div>
+          <div class="card-body p-0">
+            <div class="d-flex">
+              <div class="py-3 px-4 border-right text-center">
+                <h3 class="text-primary mb-0">25</h3>
+                <p class="mb-0">Nov</p>
+              </div>
+              <div class="p-3">
+                <a href="blog-single.html" class="h4 font-primary text-dark">Cras
+                  sed elit sit amet.</a>
+                <p>by Admin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
     </div>
   </div>
 </section>

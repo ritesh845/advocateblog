@@ -56,7 +56,7 @@ class ProfileController extends Controller
     	]);
 
         if($request->hasFile('photo')){
-            $data['photo'] = file_upload($request->photo,'images');
+            $data['photo'] = file_upload($request->photo,Auth::user()->id.'/image');
         }
      // return $data;
        $user = User::find($id);
