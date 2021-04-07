@@ -7,7 +7,7 @@
                 <article class="bg-white rounded mb-40">
                     <!-- Post Thumbnail -->
                         <a href="blog-single.html">
-                            <img class="img-fluid w-100 rounded-top" src="{{asset('storage/'.$post->image_path)}}" alt="{{$post->title}}">
+                            <img class="img-fluid w-100 rounded-top" src="{{asset($post->image_path !=null ? 'storage/'.$post->image_path : 'no_image.jpg')}}" alt="{{$post->title}}">
                         </a>
                     <!-- Post Content -->
                     <div>
