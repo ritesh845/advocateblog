@@ -24,7 +24,6 @@ Route::get('/',[App\Http\Controllers\FrontendController::class,'index']);
 
 
 // Route::get('/about',[App\Http\Controllers\FrontendController::class,'about']);
-// Route::get('/directory',[App\Http\Controllers\FrontendController::class,'directory']);
 
 Route::get('/refresh_captcha', [App\Http\Controllers\FrontendController::class, 'refreshCaptcha']);
 Route::post('/contactStore',[App\Http\Controllers\FrontendController::class,'contactStore'])->name('contactStore');
@@ -57,6 +56,9 @@ Route::get('/post/delete/{id}',[App\Http\Controllers\PostController::class,'dele
 
 Route::get('/domain',[App\Http\Controllers\DomainController::class,'index'])->name('domain.index');
 Route::get('/domain/assgine/',[App\Http\Controllers\DomainController::class,'assigne'])->name('domain.assgine');
+
+
+Route::get('/directory/{state_id}',[App\Http\Controllers\FrontendController::class,'directory']);
 
 
 Route::get('/{catg_name}/{sef_url}',[App\Http\Controllers\FrontendController::class,'post_show']);
