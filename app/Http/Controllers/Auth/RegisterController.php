@@ -97,6 +97,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'licence_no' => $data['licence_no'],
             'remember_token'=> Str::random(40),
+            'role_id'=> '3',
         ]);
         $user->attachRole('3');
         //Mail::to($user->email)->send(new VerifyMail($user));
