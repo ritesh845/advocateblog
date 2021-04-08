@@ -102,7 +102,7 @@
                       @foreach($featurePosts as $featurePost)
                       <ul class="d-inline-block pl-0 col-md-6">
                           <li class="font-secondary mb-10 text-white float-sm-left mr-sm-5">
-                              <i class="text-primary mr-2 ti-arrow-circle-right"></i>{{Str::limit($featurePost->title,50,$end='...')}}
+                              <i class="text-primary mr-2 ti-arrow-circle-right"></i>{{Str::limit($featurePost->title,28,$end='...')}}
                           </li>
                       </ul>
                       @endforeach
