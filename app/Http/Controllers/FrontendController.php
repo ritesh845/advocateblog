@@ -33,7 +33,7 @@ class FrontendController extends Controller
 
     public function directory_show($state_name,$state_code,$city_code =null){
         if($city_code != null){
-            $users = User::where('city_code',$city_code)->get();
+            $users = User::where('city_code',$city_code)->orderBy('city_name')->get();
             $page_name = 'search';
             return view('pages.index',compact('page_name','users'));
 

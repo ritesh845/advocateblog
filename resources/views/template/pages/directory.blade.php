@@ -1,6 +1,6 @@
 
    @php 
-		$states = DB::table('states')->select('states.state_code','states.state_name')->get();
+		$states = DB::table('states')->select('states.state_code','states.state_name')->orderBy('state_name')->get();
 		// $states = DB::table('users')
 	 //     ->select(DB::raw('count(users.id) as state_count, states.state_name,states.state_code'))
 	 //     ->where('users.role_id', '=', 3)
