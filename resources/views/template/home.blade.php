@@ -93,19 +93,19 @@
 <section class="about section-sm overlay" style="background-image: url({{asset('123.jpg')}});">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 ml-auto">
+            <div class="col-lg-8 ml-auto">
                 <div class="rounded p-sm-5 px-3 py-5 bg-secondary">
                     <h3 class="section-title section-title-border-half text-white">Feature in Advocate Mail?</h3>
                     <p class="text-white mb-40">Unique features of advocate mail.</p>
-                    <div>
-                        
-                            @foreach($featurePosts as $featurePost)
-                            <ul class="d-inline-block pl-0">
-                            <li class="font-secondary mb-10 text-white float-sm-left mr-sm-5">
-                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>{{$featurePost->title}}
-                            </li>
-                            </ul>
-                            @endforeach
+                    <div class="row">
+                  
+                      @foreach($featurePosts as $featurePost)
+                      <ul class="d-inline-block pl-0 col-md-6">
+                          <li class="font-secondary mb-10 text-white float-sm-left mr-sm-5">
+                              <i class="text-primary mr-2 ti-arrow-circle-right"></i>{{$featurePost->title}}
+                          </li>
+                      </ul>
+                      @endforeach
                            
                     </div>
                     <a href="service.html" class="btn btn-primary mt-4">Explore More</a>
