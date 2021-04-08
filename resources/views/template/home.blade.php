@@ -126,7 +126,7 @@
         <h3 class="">{{$aboutPost->title}}</h3>
          {!! Str::limit($aboutPost->body,500,$end='...') !!}
 
-         <a href="{{url('/'.(strtolower($post->category->catg_name)).'/'.$post->sefriendly)}}" class="btn btn-sm btn-primary"> Read More</a>
+         <a href="{{url('/'.(strtolower($aboutPost->category->catg_name)).'/'.$aboutPost->sefriendly)}}" class="btn btn-sm btn-primary"> Read More</a>
       </div>
         @endforeach
       </div>
