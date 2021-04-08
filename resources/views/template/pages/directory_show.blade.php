@@ -1,16 +1,3 @@
-
-   @php 
-		$states = DB::table('states')->select('states.state_code','states.state_name')->get();
-		// $states = DB::table('users')
-	 //     ->select(DB::raw('count(users.id) as state_count, states.state_name,states.state_code'))
-	 //     ->where('users.role_id', '=', 3)
-	 //     ->where('users.state_code', '!=', null)
-	 //     ->join('states','users.state_code', '=','states.state_code')
-	 //     ->groupBy('users.state_code')     
-	 //     // ->orderBy('state_count','desc')
-	 //     ->limit(15)
-	 //     ->get();
-	@endphp
 <section class="mt-5 mb-5">
   <div class="container">
     <div class="row">
@@ -20,15 +7,15 @@
                   <h5 class="card-title text-primary">Number of Lawyers in States</h5>
                 </div>
                 <div class="card-body p-5 bg-gray">
-                    <div class="row" id="stateRow">
-                    	  @foreach($states as $state)
+                    <div class="row" id="cityRow">
+                    	  @foreach($cities as $city)
 	                        <div class="col-md-4">
-	                            <a href="javascript:void(0)" class="text-primary stateView" id="{{$state->state_code}}" data-id="{{$state->state_name}}"> <i class="fa fa-map-marker "></i> {{$state->state_name}} </a><br/><br/>
+	                            <a href="javascript:void(0)" class="text-primary cityView" id="{{$city->city_code}}" data-id="{{$city->city_name}}"> <i class="fa fa-map-marker "></i> {{$city->city_name}} </a><br/><br/>
 	                        </div>
 	                      @endforeach
                     </div>
                    
-                    <div class="row" id="stateRow1">
+                    <div class="row" id="cityRow1">
                         <div class="col-md-12 mt-5 text-center">                          
                             <a href="https://adlaw.in/search" class="btn btn-sm btn-primary p-2">Search Other States</a>
                         </div>
@@ -49,16 +36,16 @@
         </div>
     </div>
   </div>
-  <script>
+<script>
   $(document).ready(function(){
-      $('.stateView').on('click',function(){
-        var state_name = $(this).data('id');
-        var state_code = $(this).attr('id');
+      $('.cityView').on('click',function(){
+        var city_name = $(this).data('id');
+        var city_code = $(this).attr('id');
       
-            var str = state_name.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, ' ').toLowerCase();
+            var str = city_name.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, ' ').toLowerCase();
             str = str.replace(/^\s+|\s+$/gm,'');
             str = str.replace(/\s+/g, '-');  
-            window.location.href =  '/directory/'+str+'/'+state_code;
+            window.location.href =  '/directory/{{$state_name}}/'+str+'/'+city_code;
       })
     })
 </script>

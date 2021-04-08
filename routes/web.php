@@ -60,8 +60,8 @@ Route::get('/domain',[App\Http\Controllers\DomainController::class,'index'])->na
 Route::get('/domain/assgine/',[App\Http\Controllers\DomainController::class,'assigne'])->name('domain.assgine');
 
 
-Route::get('/directory/{state_id}',[App\Http\Controllers\FrontendController::class,'directory']);
-
+Route::get('/directory/{state_name}/{state_code}',[App\Http\Controllers\FrontendController::class,'directory_show'])->name('directory_show');
+Route::get('/directory/{state_name}/{city_name}/{city_code}',[App\Http\Controllers\FrontendController::class,'directory_show'])->name('directory_show');
 
 //Admin Panel Category Manage
 

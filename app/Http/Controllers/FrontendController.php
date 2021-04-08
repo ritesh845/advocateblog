@@ -8,6 +8,7 @@ use Session;
 use App\Models\User;
 use App\Models\CatgMast;
 use App\Models\City;
+use App\Models\State;
 use App\Models\Posts;
 use App\Models\QualMast;
 use App\Models\Contact;
@@ -30,9 +31,19 @@ class FrontendController extends Controller
 
     // }
 
-    // public function directory(){
-    //       return view('pages.directory');
-    // }
+    public function directory_show($state_name,$state_code,$city_code =null){
+        if($city_code != null){
+            $users = User::where('city_code',$city_code)->get();
+            $page_name = 'search';
+            return view('pages.index',compact('page_name','users'));
+
+        }else{
+            $cities=  City::where('state_code',$state_code)->get()->take(20);
+            $page_name = 'directory_show';
+            return view('pages.index',compact('page_name','cities','state_name'));
+
+        }
+    }
 
     public function get_cities($id)
     {
