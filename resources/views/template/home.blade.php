@@ -80,7 +80,7 @@
               <div class="card-body p-0">
                 <i class="square-icon translateY-33 rounded ti-bar-chart"></i>
                 <p class="card-text mx-2 mb-0">{!! Str::limit($serivcePost->body,40,$end="...") !!}</p>
-                <a href="service-single.html" class="btn btn-secondary translateY-25">Read
+                <a href="{{url('/'.(strtolower($serivcePost->category->catg_name)).'/'.$serivcePost->sefriendly)}}" class="btn btn-secondary translateY-25">Read
                   More</a>
               </div>
             </div>
@@ -104,7 +104,7 @@
                       @foreach($featurePosts as $featurePost)
                       <ul class="d-inline-block pl-0 col-md-6">
                           <li class="font-secondary mb-10 text-white float-sm-left mr-sm-5">
-                              <i class="text-primary mr-2 ti-arrow-circle-right"></i>{{Str::limit($featurePost->title,33,$end='...')}}
+                              <a href="{{url('/'.(strtolower($featurePost->category->catg_name)).'/'.$featurePost->sefriendly)}}"><i class="text-primary mr-2 ti-arrow-circle-right"></i>{{Str::limit($featurePost->title,33,$end='...')}}</a>
                           </li>
                       </ul>
                       @endforeach
@@ -126,6 +126,7 @@
         <h3 class="">{{$aboutPost->title}}</h3>
          {!! Str::limit($aboutPost->body,500,$end='...') !!}
 
+         <a href="{{url('/'.(strtolower($post->category->catg_name)).'/'.$post->sefriendly)}}" class="btn btn-sm btn-primary"> Read More</a>
       </div>
         @endforeach
       </div>
@@ -133,7 +134,7 @@
   </div>
 </section>
 
-<section class="section bg-gray p-4">
+<section class="section bg-gray p-4 pb-5">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -147,10 +148,10 @@
         <div class="work-slider-image">
           <img class="img-fluid w-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">
           <div class="image-overlay">
-            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}">
-              <i class="ti-search"></i>
-            </a>
-            <a class="h4" href="project-single.html">{{Str::limit($blogPost->title,35,$end="...")}}</a>
+            {{-- <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}"> --}}
+              {{-- <i class="ti-search"></i> --}}
+            {{-- </a> --}}
+            <a class="h4" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>
             <p>by Admin</p>
           </div>
         </div>
