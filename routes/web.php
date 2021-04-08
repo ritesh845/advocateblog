@@ -32,7 +32,7 @@ Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
-// Route:
+// User Panel Profile Manage Routes
 Route::get('/profile',[App\Http\Controllers\ProfileController::class, 'index'])->name('profile.index');
 Route::get('/profile/edit',[App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
 Route::patch('/profile/update/{id}',[App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
@@ -44,13 +44,14 @@ Route::get('/qualification',[App\Http\Controllers\ProfileController::class, 'qua
 Route::post('/qualification/store',[App\Http\Controllers\ProfileController::class, 'qualification_store'])->name('qualification.store');
 
 
+//Master Table data fetch Route
 Route::get('/get_cities/{id}', [App\Http\Controllers\FrontendController::class, 'get_cities'])->name('get_cities');
 Route::get('/get_qual/{id}', [App\Http\Controllers\FrontendController::class, 'get_qual'])->name('get_qual');
 Route::get('/get_role_catgs/{id}', [App\Http\Controllers\FrontendController::class, 'get_role_catgs'])->name('get_role_catgs');
 
 
 
-
+//Admin & User Panel Post Manage
 Route::resource('/post',App\Http\Controllers\PostController::class);
 Route::get('/post/delete/{id}',[App\Http\Controllers\PostController::class,'delete'])->name('post.delete');
 
@@ -61,6 +62,15 @@ Route::get('/domain/assgine/',[App\Http\Controllers\DomainController::class,'ass
 Route::get('/directory/{state_id}',[App\Http\Controllers\FrontendController::class,'directory']);
 
 
+//Admin Panel Category Manage
+
+Route::resource('/category',App\Http\Controllers\CategoryController::class);
+Route::post('/categoriesPosition',[App\Http\Controllers\CategoryController::class,'categoriesPosition']);
+
+
 Route::get('/{catg_name}/{sef_url}',[App\Http\Controllers\FrontendController::class,'post_show']);
 Route::get('/{page_name}',[App\Http\Controllers\FrontendController::class,'page_show']);
+
+
+
 
