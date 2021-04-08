@@ -6,25 +6,25 @@
                 <ul class="pl-0">
                     <!-- contact items -->
                     <li class="d-flex mb-30">
-                        <i class="round-icon mr-3 ti-mobile"></i>
+                        <i class="round-icon mr-3 fa fa-whatsapp" style="font-size: 35px; padding: 17px"></i>
                         <div class="align-self-center font-primary">
-                            <p>+88 0123 456 789</p>
+                            <p>+918815218334</p>
                         </div>
                     </li>
                     <li class="d-flex mb-30">
                         <i class="round-icon mr-3 ti-email"></i>
                         <div class="align-self-center font-primary">
-                            <p>mail@advocatemail.com</p>
+                            <p>contact[At]advocatemail[DOTcom]</p>
                         </div>
                     </li>
-                    <li class="d-flex mb-30">
+                    {{-- <li class="d-flex mb-30">
                         <i class="round-icon mr-3 ti-map-alt"></i>
                         <div class="align-self-center font-primary">
                             <p>Plot # 2, County Park,</p>
                             <p>Mahalaxmi Nagar, MR-5 Indore-452010</p>
                             <p>Madhya Pradesh India</p>
                         </div>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <!-- form -->

@@ -18,6 +18,28 @@
                 {{$message}}
             </div>
          @endif 
+
+      @role('admin|super_admin')
+          <div class="row"> 
+            <div class="col-md-4 form-group">
+                <select class="form-control" name="catg_type" id="catg_type">
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                </select>
+            </div>
+            <div class="col-md-4 form-group d-none" id="userDiv">
+                <select class="form-control" name="user_id" id="user_id">
+                      <option value="">Select User</option>
+                    @foreach($users as $user)
+                      <option value="{{$user->id}}">{{$user->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <button class="btn btn-sm btn-success" id="btnFilter">Filter</button>
+            </div>
+          </div>
+          @endrole
   				<table class="table table-bordered table-striped">
   					<thead>
   						<tr>
@@ -29,28 +51,41 @@
   							<th>Action</th>
   						</tr>
   					</thead>
-  					<tbody>
-  						@php $count = 1; @endphp
-  						@foreach($posts as $post)
-	  						<tr>
-	  							<td>{{$count++}}</td>
-	  							<td>{{$post->title}}</td>
-	  							<td>{!! Str::limit($post->body,150,$end='...') !!}</td>
-	  							<td></td>
-	  							<td>{{$post->status == '1' ? 'Active' : 'Not Active' }}</td>
-	  							<td>
-	  								<a href="{{route('post.show',$post->article_id)}}"><i class="fa fa-eye text-primary"></i></a>
-
-	  								<a href="{{route('post.edit',$post->article_id)}}"><i class="fa fa-edit text-success"></i></a>
-
-	  								<a href="{{route('post.delete',$post->article_id)}}" onclick="return confirm('Are you sure you want to delete this post')"><i class="fa fa-trash text-danger"></i></a>
-	  							</td>
-	  						</tr>
-  						@endforeach
+  					<tbody id="tbody">
+  						  @include('backend.posts.table')
   					</tbody>
   				</table>
   			</div>
   		</div>
   </div>
 </div>
+<script >
+    $(document).ready(function(){
+        $('#catg_type').on('change',function(e){
+            e.preventDefault();
+            var catg_type = $(this).val();
+            if(catg_type == '1'){
+              $('#userDiv').addClass('d-none');
+            }else{
+              $('#userDiv').removeClass('d-none');
+
+            }
+        });
+        $('#btnFilter').on('click',function(){
+          var catg_type = $('#catg_type').val();
+          var user_id = $('#user_id').val();
+            $.ajax({
+              type:'post',
+              url:"{{route('post_filter')}}",
+              data:{catg_type:catg_type,user_id:user_id},
+              success:function(res){
+                console.log(res);
+                $('#tbody').empty().html(res);
+              }
+            })
+
+          console.log(catg_type);
+        })
+      });
+    </script> 
 @endsection

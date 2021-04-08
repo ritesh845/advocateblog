@@ -54,6 +54,7 @@ Route::get('/get_role_catgs/{id}', [App\Http\Controllers\FrontendController::cla
 //Admin & User Panel Post Manage
 Route::resource('/post',App\Http\Controllers\PostController::class);
 Route::get('/post/delete/{id}',[App\Http\Controllers\PostController::class,'delete'])->name('post.delete');
+Route::post('/post/filter',[App\Http\Controllers\PostController::class,'postFilter'])->name('post_filter');
 
 Route::get('/domain',[App\Http\Controllers\DomainController::class,'index'])->name('domain.index');
 Route::get('/domain/assgine/',[App\Http\Controllers\DomainController::class,'assigne'])->name('domain.assgine');

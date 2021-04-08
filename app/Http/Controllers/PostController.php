@@ -22,7 +22,8 @@ class PostController extends Controller
             $posts = Posts::orderBy('order_num')->cursor();
         }
 
-        return view('backend.posts.index',compact('posts'));
+        $users = User::select('id','name')->where('role_id','!=','1')->cursor();
+        return view('backend.posts.index',compact('posts','users'));
     }
 
     /**
@@ -172,5 +173,16 @@ class PostController extends Controller
         return $data;
     }
 
+    public function postFilter(Request $request){
+        
+        $posts = Posts::select('article_id','title','body','start_date','status');
+        if($request->catg_type == '1'){
+            $posts = $posts->where('user_id','1');
+        }else{
+            $posts = $posts->where('user_id',$request->user_id);
+        }
+        $posts = $posts->orderBy('order_num')->cursor();
+        return view('backend.posts.table',compact('posts'));
+    }
 
 }
