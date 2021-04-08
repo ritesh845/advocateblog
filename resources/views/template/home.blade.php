@@ -98,14 +98,15 @@
                     <h3 class="section-title section-title-border-half text-white">Feature in Advocate Mail?</h3>
                     <p class="text-white mb-40">Unique features of advocate mail.</p>
                     <div>
-                        <ul class="d-inline-block pl-0">
+                        
                             @foreach($featurePosts as $featurePost)
+                            <ul class="d-inline-block pl-0">
                             <li class="font-secondary mb-10 text-white float-sm-left mr-sm-5">
                                 <i class="text-primary mr-2 ti-arrow-circle-right"></i>{{$featurePost->title}}
                             </li>
+                            </ul>
                             @endforeach
                            
-                        </ul>
                     </div>
                     <a href="service.html" class="btn btn-primary mt-4">Explore More</a>
                 </div>
