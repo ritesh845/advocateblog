@@ -14,7 +14,8 @@
 	 //     ->get();
 	@endphp
     @php 
-        $featurePosts = \App\Models\Posts::where(['catg_id' => '7','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(3);
+        $featurePosts = \App\Models\Posts::where(['catg_id' => '7','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(6);
+        $serivcePosts = \App\Models\Posts::where(['catg_id' => '19','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(3);
 
     @endphp
 
@@ -64,19 +65,19 @@
     <div class="row justify-content-center">
       <div class="col-lg-12 text-center">
         {{-- <h5 class="section-title-sm"></h5> --}}
-        <h2 class="section-title section-title-border">Features In Email</h2>
+        <h2 class="section-title section-title-border">Services</h2>
       </div>
       <!-- service item -->
-        @foreach($featurePosts as $key => $featurePost)
+        @foreach($serivcePosts as $key => $serivcePost)
           <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
             <div class="card text-center">
-              <h4 class="card-title pt-3" style="height:60px !important">{{$featurePost->title}}</h4>
+              <h4 class="card-title pt-3" style="height:60px !important">{{$serivcePost->title}}</h4>
               <div class="card-img-wrapper">
-                <img class="card-img-top rounded-0" src="{{asset($featurePost->image_path !=null ? 'storage/'.$featurePost->image_path : 'no_image.jpg')}}" alt="service-image" style="height: 242px  !important;">
+                <img class="card-img-top rounded-0" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="service-image" style="height: 242px  !important;">
               </div>
               <div class="card-body p-0">
                 <i class="square-icon translateY-33 rounded ti-bar-chart"></i>
-                <p class="card-text mx-2 mb-0">{!! Str::limit($featurePost->body,40,$end="...") !!}</p>
+                <p class="card-text mx-2 mb-0">{!! Str::limit($serivcePost->body,40,$end="...") !!}</p>
                 <a href="service-single.html" class="btn btn-secondary translateY-25">Read
                   More</a>
               </div>
@@ -94,24 +95,16 @@
         <div class="row">
             <div class="col-lg-6 ml-auto">
                 <div class="rounded p-sm-5 px-3 py-5 bg-secondary">
-                    <h3 class="section-title section-title-border-half text-white">Who We Are?</h3>
-                    <p class="text-white mb-40">Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3 class="section-title section-title-border-half text-white">Feature in Advocate Mail?</h3>
+                    <p class="text-white mb-40">Unique features of advocate mail.</p>
                     <div>
                         <ul class="d-inline-block pl-0">
+                            @foreach($featurePosts as $featurePost)
                             <li class="font-secondary mb-10 text-white float-sm-left mr-sm-5">
-                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>Business Services</li>
-                            <li class="font-secondary mb-10 text-white">
-                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>Audit &amp; Assurance</li>
-                            <li class="font-secondary mb-10 text-white">
-                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>IT Control Solutions</li>
-                        </ul>
-                        <ul class="d-inline-block pl-0">
-                            <li class="font-secondary mb-10 text-white">
-                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>Business Services</li>
-                            <li class="font-secondary mb-10 text-white">
-                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>Audit &amp; Assurance</li>
-                            <li class="font-secondary mb-10 text-white">
-                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>IT Control Solutions</li>
+                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>{{$featurePost->title}}
+                            </li>
+                            @endforeach
+                           
                         </ul>
                     </div>
                     <a href="service.html" class="btn btn-primary mt-4">Explore More</a>
