@@ -17,6 +17,7 @@
         $featurePosts = \App\Models\Posts::where(['catg_id' => '7','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(6);
         $serivcePosts = \App\Models\Posts::where(['catg_id' => '19','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(3);
         $aboutPosts = \App\Models\Posts::where(['catg_id' => '2','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(2);
+        $blogPosts = \App\Models\Posts::where(['catg_id' => '16','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(20);
 
     @endphp
 
@@ -132,100 +133,30 @@
   </div>
 </section>
 
-<section class="section bg-gray">
+<section class="section bg-gray p-4">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h5 class="section-title-sm">Our Works</h5>
-        <h2 class="section-title section-title-border-gray">Latest Projects</h2>
+        <h2 class="section-title section-title-border-gray">Recent Blogs</h2>
       </div>
     </div>
     <!-- work slider -->
     <div class="row work-slider">
+      @foreach($blogPosts as $blogPost)
       <div class="col-lg-4 px-2">
         <div class="work-slider-image">
-          <img class="img-fluid w-100" src="{{asset('1.jpg')}}" alt="work-image">
+          <img class="img-fluid w-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">
           <div class="image-overlay">
-            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('1.jpg')}}">
+            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}">
               <i class="ti-search"></i>
             </a>
-            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
+            <a class="h4" href="project-single.html">{{Str::limit($blogPost->title,35,$end="...")}}</a>
             <p>by Admin</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 px-2">
-        <div class="work-slider-image">
-          <img class="img-fluid w-100" src="{{asset('12.jpg')}}" alt="work-image">
-          <div class="image-overlay">
-            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('12.jpg')}}">
-              <i class="ti-search"></i>
-            </a>
-            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-            <p>by Admin</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 px-2">
-        <div class="work-slider-image">
-          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
-          <div class="image-overlay">
-            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
-              <i class="ti-search"></i>
-            </a>
-            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-            <p>by Admin</p>
-          </div>
-        </div>
-      </div>      
-      <div class="col-lg-4 px-2">
-        <div class="work-slider-image">
-          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
-          <div class="image-overlay">
-            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
-              <i class="ti-search"></i>
-            </a>
-            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-            <p>by Admin</p>
-          </div>
-        </div>
-      </div>  
-      <div class="col-lg-4 px-2">
-        <div class="work-slider-image">
-          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
-          <div class="image-overlay">
-            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
-              <i class="ti-search"></i>
-            </a>
-            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-            <p>by Admin</p>
-          </div>
-        </div>
-      </div>  
-      <div class="col-lg-4 px-2">
-        <div class="work-slider-image">
-          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
-          <div class="image-overlay">
-            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
-              <i class="ti-search"></i>
-            </a>
-            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-            <p>by Admin</p>
-          </div>
-        </div>
-      </div>  
-      <div class="col-lg-4 px-2">
-        <div class="work-slider-image">
-          <img class="img-fluid w-100" src="{{asset('123.jpg')}}" alt="work-image">
-          <div class="image-overlay">
-            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset('123.jpg')}}">
-              <i class="ti-search"></i>
-            </a>
-            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-            <p>by Admin</p>
-          </div>
-        </div>
-      </div>  
+      @endforeach
+     
     </div>
   </div>
 </section>
