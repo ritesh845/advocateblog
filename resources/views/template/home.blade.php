@@ -16,6 +16,7 @@
     @php 
         $featurePosts = \App\Models\Posts::where(['catg_id' => '7','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(6);
         $serivcePosts = \App\Models\Posts::where(['catg_id' => '19','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(3);
+        $aboutPosts = \App\Models\Posts::where(['catg_id' => '2','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(2);
 
     @endphp
 
@@ -115,63 +116,17 @@
     </div>
 </section>
 
-<section class="section">
+<section class="section p-4">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
-        <h5 class="section-title-sm">Best Service</h5>
-        <h2 class="section-title section-title-border-half">Why Choose Us</h2>
+      @foreach($aboutPosts as $aboutPost)
+   
+      <div class="col-lg-6">
+        <h3 class="">{{$aboutPost->title}}</h3>
+         {!! Str::limit($aboutPost->body,500,$end='...') !!}
+
       </div>
-      <div class="col-lg-7">
-        <div class="mb-40">
-          <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed eiusmod tempor incididunt laboris nisi
-            ut aliquip ex ea commodo consequat. </p>
-          <p class="text-dark mb-30">Duis aute irure dolor in reprehenderit voluptate
-            velit esse cillum dolore fugiat nulla pariatur.Excepteur
-            sint ocaecat cupidatat non proident sunt culpa qui officia deserunt mollit
-            anim id est laborum. sed
-            perspiciatis unde omnisiste natus error sit voluptatem
-            accusantium.doloremque ladantium totam rem
-            aperieaque ipsa quae ab illo inventore.veritatis. et quasi architecto beatae
-            vitae dicta sunt explicabo.</p>
-        </div>
-        <!-- fun-fact -->
-        {{-- <div class="mb-md-50">
-          <div class="row">
-            <div class="col-4">
-              <div class="d-flex flex-column flex-sm-row align-items-center">
-                <i class="round-icon mr-sm-3 ti-server"></i>
-                <div class="text-center text-sm-left">
-                  <h2 class="count mb-0" data-count="230">0</h2>
-                  <p class="mb-0">Projects Done</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="d-flex flex-column flex-sm-row align-items-center">
-                <i class="round-icon mr-sm-3 ti-face-smile"></i>
-                <div class="text-center text-sm-left">
-                  <h2 class="count mb-0" data-count="789">0</h2>
-                  <p class="mb-0">Satisfied Clients</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="d-flex flex-column flex-sm-row align-items-center">
-                <i class="round-icon mr-sm-3 ti-thumb-up"></i>
-                <div class="text-center text-sm-left">
-                  <h2 class="count mb-0" data-count="580">0</h2>
-                  <p class="mb-0">Cup Of Coffee</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> --}}
-      </div>
-      <!-- progressbar -->
-      <div class="col-lg-4 offset-lg-1">
-       
+        @endforeach
       </div>
     </div>
   </div>
