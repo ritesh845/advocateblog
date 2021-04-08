@@ -72,7 +72,7 @@
             <div class="card text-center">
               <h4 class="card-title pt-3" style="height:60px !important">{{$featurePost->title}}</h4>
               <div class="card-img-wrapper">
-                <img class="card-img-top rounded-0" src="{{asset($featurePost->image_path !=null ? 'storage/'.$featurePost->image_path : 'no_image.jpg')}}" alt="service-image">
+                <img class="card-img-top rounded-0" src="{{asset($featurePost->image_path !=null ? 'storage/'.$featurePost->image_path : 'no_image.jpg')}}" alt="service-image" style="height: 242px  !important;">
               </div>
               <div class="card-body p-0">
                 <i class="square-icon translateY-33 rounded ti-bar-chart"></i>
