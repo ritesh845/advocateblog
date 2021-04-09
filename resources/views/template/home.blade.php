@@ -112,7 +112,7 @@
                       @endforeach
                            
                     </div>
-                    <a href="service.html" class="btn btn-primary mt-4">Explore More</a>
+                    <a href="{{url('/features')}}" class="btn btn-primary mt-4">Explore More</a>
                 </div>
             </div>
         </div>
