@@ -146,18 +146,30 @@
     <!-- work slider -->
     <div class="row work-slider">
       @foreach($blogPosts as $blogPost)
-      <div class="col-lg-4 px-2">
+        <div class="col-lg-3 px-0">
+          <div class="work-slider-image">
+            <img class="img-fluid w-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">
+            <div class="image-overlay">
+             
+              <a class="h4" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>
+              <p>by Admin</p>
+            </div>
+          </div>
+      </div>
+
+
+     {{--  <div class="col-lg-4 px-2">
         <div class="work-slider-image">
           <img class="img-fluid w-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">
           <div class="image-overlay">
-            {{-- <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}"> --}}
-              {{-- <i class="ti-search"></i> --}}
-            {{-- </a> --}}
+            <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}">
+              <i class="ti-search"></i>
+            </a>
             <a class="h4" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>
             <p>by Admin</p>
           </div>
         </div>
-      </div>
+      </div> --}}
       @endforeach
      
     </div>
