@@ -28,22 +28,6 @@
 	                      @endforeach
                     </div>
                    
-                    <div class="row" id="stateRow1">
-                        <div class="col-md-12 mt-5 text-center">                          
-                            <a href="https://adlaw.in/search" class="btn btn-sm btn-primary p-2">Search Other States</a>
-                        </div>
-                    </div>
-
-                    <div class="row d-none" id="cityRow">
-                        
-                        
-                    </div>
-                    <div class="row d-none" id="cityRow1">
-                        <div class="col-md-12 mt-5 text-center">
-                            <a href="javascript:void(0)" class="btn btn-sm btn-primary p-2" id="backStateBtn">Back</a>
-                            <a href="https://adlaw.in/search" class="btn btn-sm btn-primary p-2">Search Other Cities</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -164,38 +164,21 @@
   </div>
 </section>
 
-<section class="mission section">
+<section class="mission section p-4 pb-5">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
            <div class="card shadow-sm card-border-top">
-                <div class="card-header text-center p-2 ">
-                  <h5 class="card-title text-primary">Number of Lawyers in States</h5>
+                <div class="card-header text-center p-2 "  style="border-radius: 0px !important">
+                  <h2 class="card-title section-title-border-gray">Browse Lawyers in States</h2>
                 </div>
                 <div class="card-body p-5 bg-gray">
                     <div class="row" id="stateRow">
                         @foreach($states as $state)
                           <div class="col-md-4">
-                              <a href="javascript:void(0)" class="text-primary stateView" id="{{$state->state_code}}" data-id="{{$state->state_name}}"> <i class="fa fa-map-marker "></i> {{$state->state_name}} </a><br/><br/>
+                              <a href="javascript:void(0)" class="text-dark stateView" id="{{$state->state_code}}" data-id="{{$state->state_name}}"> <i class="fa fa-map-marker "></i> {{$state->state_name}} </a><br>
                           </div>
                         @endforeach
-                    </div>
-                   
-                    <div class="row" id="stateRow1">
-                        <div class="col-md-12 mt-5 text-center">                          
-                            <a href="https://adlaw.in/search" class="btn btn-sm btn-primary p-2">Search Other States</a>
-                        </div>
-                    </div>
-
-                    <div class="row d-none" id="cityRow">
-                        
-                        
-                    </div>
-                    <div class="row d-none" id="cityRow1">
-                        <div class="col-md-12 mt-5 text-center">
-                            <a href="javascript:void(0)" class="btn btn-sm btn-primary p-2" id="backStateBtn">Back</a>
-                            <a href="https://adlaw.in/search" class="btn btn-sm btn-primary p-2">Search Other Cities</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -209,12 +192,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="text-white mb-20 font-weight-normal">We Are Alawys <br> Comited</h1>
+        <h1 class="text-white mb-20 font-weight-normal">Professional Identity <br>assocaited with Email </h1>
         <div class="d-flex">
-          <a class="popup-youtube play-icon mr-4" href="https://www.youtube.com/watch?v=6ZfuNTqbHE8">
+          <a class="popup-youtube play-icon mr-4" href="blog/professional-identity-assocaited-with-email.html">
             <i class="ti-control-play"></i>
           </a>
-          <p class="text-white align-self-center h4">Lorem ipsum dolor <br> sit amet con.
+          <p class="text-white align-self-center h4">The only service in the world that provides professional identity with email address. 
           </p>
         </div>
       </div>
