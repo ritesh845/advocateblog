@@ -153,10 +153,10 @@
         <div class="col-lg-3 card px-0">
         <div class="card-body p-0">
           <img class=" w-100 h-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">
-          <div class="image-overlay p-4 w-100" style="position: absolute; top:170px">
+          <div class="image-overlay p-4 w-100" style="position: absolute; top:118px">
             
-            <a class="h4" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>
-            <p>by Admin</p>
+            <a class="h4 text-white" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>
+            <p class="text-white">by Admin</p>
           </div>
         </div>
       </div>
