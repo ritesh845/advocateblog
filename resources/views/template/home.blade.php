@@ -194,11 +194,15 @@
       <div class="col-lg-12">
         <h1 class="text-white mb-20 font-weight-normal">Professional Identity <br>assocaited with Email </h1>
         <div class="d-flex">
-          <a class="popup-youtube play-icon mr-4" href="blog/professional-identity-assocaited-with-email.html">
-            <i class="ti-control-play"></i>
-          </a>
+          {{-- <a href="blog/professional-identity-assocaited-with-email.html"> --}}
+            {{-- <i class="ti-control-play"></i> --}}
+          {{-- </a> --}}
           <p class="text-white align-self-center h4">The only service in the world that provides professional identity with email address. 
+            <br>
+            <a href="blog/professional-identity-assocaited-with-email.html" class="btn btn-sm btn-primary mt-4">Read More</a>
           </p>
+
+          
         </div>
       </div>
     </div>
