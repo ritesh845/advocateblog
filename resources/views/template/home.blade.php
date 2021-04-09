@@ -254,7 +254,7 @@
                     <h3 class="text-white">Advocate Mail give the smart solution for your business</h3>
                 </div>
                 <div class="col-lg-6 text-lg-right align-self-center">
-                    <a href="contact.html" class="btn btn-light">REGISTER</a>
+                    <a href="{{route('register')}}" class="btn btn-light">REGISTER</a>
                 </div>
             </div>
         </div>
