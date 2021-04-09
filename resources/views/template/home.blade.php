@@ -144,21 +144,22 @@
       </div>
     </div>
     <!-- work slider -->
-    <div class="row work-slider">
+    <div class="row ">
       
+    
+
       @foreach($blogPosts as $blogPost)
-        <div class="col-lg-3 px-0">
-        <div class="work-slider-image">
-          <img class="img-fluid w-100" src="{{url('storage/1/image/1617710258_sunil-jadhav-aurangabad-1170x650.jpg')}}" alt="work-image">
-          <div class="image-overlay">
+
+        <div class="col-lg-3 card px-0">
+        <div class="card-body p-0">
+          <img class=" w-100 h-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">
+          <div class="image-overlay p-4 w-100" style="position: absolute; top:170px">
             
-            <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
+            <a class="h4" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>
             <p>by Admin</p>
           </div>
         </div>
       </div>
-
-
       @endforeach
      
     </div>
