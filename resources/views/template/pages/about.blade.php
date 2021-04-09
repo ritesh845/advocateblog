@@ -1,9 +1,8 @@
 <section class="bg-gray">
     <div class="container p-5">
         <div class="row">
-                <!-- Blog Post -->
            	@foreach($posts as $post)
-                <div class="col-lg-4 col-sm-6 ">
+                <div class="col-lg-4 col-sm-6 " style="width: 33.33% !important">
                     <div class="card text-center">
                       <h4 class="card-title pt-3" style="height:60px !important">{{$post->title}}</h4>
                       <div class="card-img-wrapper">
