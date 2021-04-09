@@ -144,7 +144,7 @@
       </div>
     </div>
     <!-- work slider -->
-    <div class="row ">
+    <div class="row text-center">
       
     
 
