@@ -19,6 +19,8 @@
         $aboutPosts = \App\Models\Posts::where(['catg_id' => '2','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(2);
         $blogPosts = \App\Models\Posts::where(['catg_id' => '16','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(20);
 
+        $states = DB::table('states')->select('states.state_code','states.state_name')->orderBy('state_name')->get();
+
     @endphp
 
 
@@ -166,72 +168,39 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h5 class="section-title-sm">Our Goal</h5>
-        <h2 class="section-title section-title-border-half">Company Mission</h2>
-        <div class="row">
-          <div class="col-lg-6">
-            <p class="mb-40">Lorem ipsum dolor sit amet consectetur adipisicing elit sed
-              eiusmod tempor didunt laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </div>
-        </div>
+           <div class="card shadow-sm card-border-top">
+                <div class="card-header text-center p-2 ">
+                  <h5 class="card-title text-primary">Number of Lawyers in States</h5>
+                </div>
+                <div class="card-body p-5 bg-gray">
+                    <div class="row" id="stateRow">
+                        @foreach($states as $state)
+                          <div class="col-md-4">
+                              <a href="javascript:void(0)" class="text-primary stateView" id="{{$state->state_code}}" data-id="{{$state->state_name}}"> <i class="fa fa-map-marker "></i> {{$state->state_name}} </a><br/><br/>
+                          </div>
+                        @endforeach
+                    </div>
+                   
+                    <div class="row" id="stateRow1">
+                        <div class="col-md-12 mt-5 text-center">                          
+                            <a href="https://adlaw.in/search" class="btn btn-sm btn-primary p-2">Search Other States</a>
+                        </div>
+                    </div>
+
+                    <div class="row d-none" id="cityRow">
+                        
+                        
+                    </div>
+                    <div class="row d-none" id="cityRow1">
+                        <div class="col-md-12 mt-5 text-center">
+                            <a href="javascript:void(0)" class="btn btn-sm btn-primary p-2" id="backStateBtn">Back</a>
+                            <a href="https://adlaw.in/search" class="btn btn-sm btn-primary p-2">Search Other Cities</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
       </div>
-      <div class="col-lg-6">
-        <!-- accordion -->
-        <div id="accordion" class="mb-md-50">
-          <div class="card border-0 mb-4">
-            <div class="card-header bg-gray border p-0">
-              <a class="card-link h5 d-block tex-dark mb-0 py-10 px-4" data-toggle="collapse" href="#collapseOne">
-                <i class="ti-minus text-primary mr-2"></i> Our Company Mission
-              </a>
-            </div>
-            <div id="collapseOne" class="collapse show" data-parent="#accordion">
-              <div class="card-body font-secondary text-color pl-0 pb-0">
-                Duis aute irure dolor in reprehenderit voluptate velit esse cillum
-                dolore fugiat nulla pariatur.Excepteur sint ocaecat cupidatat
-                non proident sunt culpa qui officia deserunt mollit anim id est
-                laborum.
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 mb-4">
-            <div class="card-header bg-gray border p-0">
-              <a class="collapsed card-link h5 d-block tex-dark mb-0 py-10 px-4" data-toggle="collapse"
-                href="#collapseTwo">
-                <i class="ti-plus text-primary mr-2"></i> Our Company Mission
-              </a>
-            </div>
-            <div id="collapseTwo" class="collapse" data-parent="#accordion">
-              <div class="card-body font-secondary text-color pl-0 pb-0">
-                Duis aute irure dolor in reprehenderit voluptate velit esse cillum
-                dolore fugiat nulla pariatur.Excepteur sint ocaecat cupidatat
-                non proident sunt culpa qui officia deserunt mollit anim id est
-                laborum.
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 mb-4">
-            <div class="card-header bg-gray border p-0">
-              <a class="collapsed card-link h5 d-block tex-dark mb-0 py-10 px-4" data-toggle="collapse"
-                href="#collapseThree">
-                <i class="ti-plus text-primary mr-2"></i> Our Company Mission
-              </a>
-            </div>
-            <div id="collapseThree" class="collapse" data-parent="#accordion">
-              <div class="card-body font-secondary text-color pl-0 pb-0">
-                Duis aute irure dolor in reprehenderit voluptate velit esse cillum
-                dolore fugiat nulla pariatur.Excepteur sint ocaecat cupidatat
-                non proident sunt culpa qui officia deserunt mollit anim id est
-                laborum.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- chart -->
-      <div class="col-lg-6">
-            
-      </div>
+   
     </div>
   </div>
 </section>
@@ -377,4 +346,17 @@
      
     </div>
   </div>
+<script>
+  $(document).ready(function(){
+      $('.stateView').on('click',function(){
+        var state_name = $(this).data('id');
+        var state_code = $(this).attr('id');
+      
+            var str = state_name.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, ' ').toLowerCase();
+            str = str.replace(/^\s+|\s+$/gm,'');
+            str = str.replace(/\s+/g, '-');  
+            window.location.href =  '/directory/'+str+'/'+state_code;
+      })
+    })
+</script>
 </section>
