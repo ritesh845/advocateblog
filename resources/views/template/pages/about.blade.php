@@ -20,6 +20,13 @@
              @endforeach           
         </div>
     </div>
+
+<script >
+    $(document).ready(function(){
+        var div = document.getElementById('strong');
+        strong.remove();
+    });
+</script>
 </section>
 
 
