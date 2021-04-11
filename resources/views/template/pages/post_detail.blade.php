@@ -3,7 +3,9 @@
         <div class="row">
             <div class="col-lg-8 py-100">
                 <div class="border rounded bg-white">
+
                     <img class="img-fluid w-100 rounded-top" src="{{asset($post->image_path !=null ? 'storage/'.$post->image_path : 'no_image.jpg')}}" alt="{{$post->title}}" style="min-height: 250px; max-height: 250px">
+
                     <div class="p-4">
                         <h3>{{$post->title}}</h3>
                         <ul class="list-inline d-block pb-4 border-bottom mb-3">

@@ -30,7 +30,7 @@ class VerfiyTemplate extends Middleware
 
         $user = User::select('id','domain_url','status','template_id','site_name','site_logo')->firstWhere(['domain_url' => $this->url,'status' => 'A']);
         if(!empty($user)){
-            if($this->url === '127.0.0.1:8000'){
+            if($this->url === 'advocatemail.com'){
                 $catg_type = '1';
             }else{
                 $catg_type = '2';
