@@ -51,7 +51,7 @@
                 <article class="bg-white rounded mb-40">
                     <!-- Post Thumbnail -->
                         <a href="blog-single.html">
-                            <img class="img-fluid w-100 rounded-top" src="{{asset($post->image_path !=null ? 'storage/'.$post->image_path : 'no_image.jpg')}}" alt="{{$post->title}}" style="max-height: 250px !important">
+                            <img class="img-fluid w-100 rounded-top" src="{{asset($post->image_path !=null ? 'storage/'.$post->image_path : 'no_image.jpg')}}" alt="{{$post->title}}" style="min-height: 250px !important;max-height: 250px !important;">
                         </a>
                     <!-- Post Content -->
                     <div>
