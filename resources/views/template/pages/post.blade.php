@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             @foreach($posts as $post)
-            <div class="col-lg-4 py-100">
+            <div class="col-lg-4 py-50">
                 <!-- Blog Post -->
                 <article class="bg-white rounded mb-40">
                     <!-- Post Thumbnail -->
