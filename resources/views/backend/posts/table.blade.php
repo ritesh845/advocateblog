@@ -34,4 +34,3 @@
 	</tbody>
 </table>
 
-{{$posts->links()}}
