@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="{{asset('template/plugins/swiper/swiper.min.css')}}">
   <!-- Stylesheets -->
   <link href="{{asset('template/css/template.css')}}" rel="stylesheet">
+  <link href="{{asset('css/font-size.css')}}" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   
 

@@ -18,6 +18,7 @@
         $serivcePosts = \App\Models\Posts::where(['catg_id' => '19','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(3);
         $aboutPosts = \App\Models\Posts::where(['catg_id' => '2','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(2);
         $blogPosts = \App\Models\Posts::where(['catg_id' => '16','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(20);
+        $newsPosts = \App\Models\Posts::where(['catg_id' => '20','status' => '1','user_id'=>session('user_id')])->orderBy('order_num')->get()->take(3);
 
         $states = DB::table('states')->select('states.state_code','states.state_name')->orderBy('state_name')->get();
 
@@ -263,11 +264,11 @@
 <section class="cta overlay-primary py-50 text-center text-lg-left" style="background-image: url({{asset('1.jpg')}});">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <h3 class="text-white">Advocate Mail give the smart solution for your business</h3>
+                <div class="col-lg-7">
+                    <h3 class="text-white text-justify">AdvocateMail.com is the only email service that provides professional Identity with a professional blogging website and also promotes your service on web </h3>
                 </div>
-                <div class="col-lg-6 text-lg-right align-self-center">
-                    <a href="{{route('register')}}" class="btn btn-light">REGISTER</a>
+                <div class="col-lg-5 text-lg-right align-self-center " >
+                    <a href="{{route('register')}}" class="btn btn-light f-26">REGISTER NOW</a>
                 </div>
             </div>
         </div>
@@ -301,48 +302,7 @@
           </div>
         </div>
       </div>
-      <!-- blog-item -->
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card">
-          <div class="card-img-wrapper overlay-rounded-top">
-            <img class="card-img-top"  src="{{asset('123.jpg')}}" alt="blog-thumbnail">
-          </div>
-          <div class="card-body p-0">
-            <div class="d-flex">
-              <div class="py-3 px-4 border-right text-center">
-                <h3 class="text-primary mb-0">25</h3>
-                <p class="mb-0">Nov</p>
-              </div>
-              <div class="p-3">
-                <a href="blog-single.html" class="h4 font-primary text-dark">Cras
-                  sed elit sit amet.</a>
-                <p>by Admin</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card">
-          <div class="card-img-wrapper overlay-rounded-top">
-            <img class="card-img-top"  src="{{asset('123.jpg')}}" alt="blog-thumbnail">
-          </div>
-          <div class="card-body p-0">
-            <div class="d-flex">
-              <div class="py-3 px-4 border-right text-center">
-                <h3 class="text-primary mb-0">25</h3>
-                <p class="mb-0">Nov</p>
-              </div>
-              <div class="p-3">
-                <a href="blog-single.html" class="h4 font-primary text-dark">Cras
-                  sed elit sit amet.</a>
-                <p>by Admin</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+     
      
     </div>
   </div>
