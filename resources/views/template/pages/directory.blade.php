@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-11 m-auto">
             <div class="card shadow-sm card-border-top">
-                <div class="card-header text-center p-2 ">
+                <div class="card-header text-center " style="border-radius: 0px ">
                   <h5 class="card-title text-primary">Number of Lawyers in States</h5>
                 </div>
                 <div class="card-body p-5 bg-gray">
