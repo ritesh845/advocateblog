@@ -40,7 +40,12 @@
             </div>
           </div>
           @endrole
+          <div class="row">
+            <div class="col-md-12" id="table">
   						  @include('backend.posts.table')
+              
+            </div>
+          </div>
   				
   			</div>
   		</div>
@@ -67,7 +72,7 @@
               data:{catg_type:catg_type,user_id:user_id},
               success:function(res){
                 console.log(res);
-                $('#tbody').empty().html(res);
+                $('#table').empty().html(res);
               }
             })
 
