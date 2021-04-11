@@ -71,8 +71,9 @@ class FrontendController extends Controller
 
     public function page_show($page_name){
         $posts = Posts::where(['catg_id' => session('catg_id'),'status' => '1','user_id'=>session('user_id')])->get();
+        $page = collect(Session::get('catgs'))->firstWhere('catg_url',$page_name);
 
-        return view('pages.index',compact('posts','page_name'));
+        return view('pages.index',compact('posts','page_name','page'));
     }
     public function contactStore(Request $request){
         
