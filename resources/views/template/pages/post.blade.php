@@ -6,7 +6,7 @@
                 <!-- Blog Post -->
                 <article class="bg-white rounded mb-40">
                     <!-- Post Thumbnail -->
-                        <a href="blog-single.html">
+                        <a href="{{url('/'.(strtolower($post->category->catg_name)).'/'.$post->sefriendly)}}">
                             <img class="img-fluid w-100 rounded-top" src="{{asset($post->image_path !=null ? 'storage/'.$post->image_path : 'no_image.jpg')}}" alt="{{$post->title}}" style="min-height: 250px !important;max-height: 250px !important;">
                         </a>
                     <!-- Post Content -->
@@ -22,7 +22,7 @@
                             </div>
                             <div class="px-4">
                                 <!-- Post Title -->
-                                <a class="h4 d-block mb-10" href="blog-single.html">{{$post->title}}</a>
+                                <a class="h4 d-block mb-10" href="{{url('/'.(strtolower($post->category->catg_name)).'/'.$post->sefriendly)}}">{{$post->title}}</a>
                                 <!-- Post Meta -->
                                 <ul class="list-inline">
                                     <li class="list-inline-item paragraph mr-5">By
