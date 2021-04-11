@@ -5,7 +5,7 @@
 			<ul class="pl-0 mb-0">
 				@foreach(collect(session('catgs'))->where('is_post','1') as $catg)
 					<li class="border-bottom">
-					    <a href="#" class="d-block text-color py-10">{{$catg->catg_name}}</a>
+					    <a href="{{$catg->catg_url !=null ? url($catg->catg_url) : '#'}}" class="d-block text-color py-10">{{$catg->catg_name}}</a>
 					</li>
 				@endforeach
 			</ul>
