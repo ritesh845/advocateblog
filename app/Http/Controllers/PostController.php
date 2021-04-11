@@ -17,10 +17,11 @@ class PostController extends Controller
     public function index()
     {   
         if(Auth::user()->hasRole('user')){
-            $posts = Posts::where('user_id',Auth::user()->id)->orderBy('order_num')->cursor();
+            $posts = Posts::where('user_id',Auth::user()->id)->orderBy('order_num')->paginate(10);
         }else{
-            $posts = Posts::orderBy('order_num')->cursor();
+            $posts = Posts::orderBy('order_num')->paginate(10);
         }
+
 
         $users = User::select('id','name')->where('role_id','!=','1')->cursor();
         return view('backend.posts.index',compact('posts','users'));
@@ -181,7 +182,7 @@ class PostController extends Controller
         }else{
             $posts = $posts->where('user_id',$request->user_id);
         }
-        $posts = $posts->orderBy('order_num')->cursor();
+        $posts = $posts->orderBy('order_num')->paginate(10);
         return view('backend.posts.table',compact('posts'));
     }
 

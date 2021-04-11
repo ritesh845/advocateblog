@@ -40,21 +40,8 @@
             </div>
           </div>
           @endrole
-  				<table class="table table-bordered table-striped">
-  					<thead>
-  						<tr>
-  							<th>#</th>
-  							<th>Title</th>
-  							<th>Body</th>
-  							<th>Image</th>
-  							<th>status</th>
-  							<th>Action</th>
-  						</tr>
-  					</thead>
-  					<tbody id="tbody">
   						  @include('backend.posts.table')
-  					</tbody>
-  				</table>
+  				
   			</div>
   		</div>
   </div>
