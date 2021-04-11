@@ -1,4 +1,4 @@
-
+    
     @include('template.partials.slider')
 
     @php 
@@ -158,10 +158,8 @@
       </div> --}}
       @foreach($blogPosts as $blogPost)
 
-
-
-      <div class="col-lg-4 px-2">
-        <div class="work-slider-image">
+      <div class="col-lg-6 px-2">
+        <div class="work-slider-image" >
           <img class="img-fluid w-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">
           <div class="image-overlay">
             {{-- <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}"> --}}
@@ -235,21 +233,21 @@
             </div>
             <div class="col-lg-7 col-md-7 align-self-center pl-0">
                 <div class="testimonial-slider p-5">
-                    <!-- slider item -->
+                     slider item 
                     <div class="outline-0">
                         <i class="testimonial-icon ti-quote-left"></i>
                         <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi aliquip excepteur.</p>
                         <h4 class="font-weight-normal">Julia Robertson</h4>
                         <h6 class="font-secondary text-color">Happy Clients</h6>
                     </div>
-                    <!-- slider item -->
+                     slider item 
                     <div class="outline-0">
                         <i class="testimonial-icon ti-quote-left"></i>
                         <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi aliquip excepteur.</p>
                         <h4 class="font-weight-normal">Julia Robertson</h4>
                         <h6 class="font-secondary text-color">Happy Clients</h6>
                     </div>
-                    <!-- slider item -->
+                     slider item 
                     <div class="outline-0">
                         <i class="testimonial-icon ti-quote-left"></i>
                         <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi aliquip excepteur.</p>
@@ -282,27 +280,27 @@
         <h2 class="section-title section-title-border-gray"> News</h2>
       </div>
       <!-- blog-item -->
+      @foreach($newsPosts as $newsPost)
       <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
         <div class="card">
           <div class="card-img-wrapper overlay-rounded-top">
-            <img class="card-img-top" src="{{asset('12.jpg')}}" alt="blog-thumbnail">
+            <img class="card-img-top" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="blog-thumbnail">
           </div>
           <div class="card-body p-0">
             <div class="d-flex">
               <div class="py-3 px-4 border-right text-center">
-                <h3 class="text-primary mb-0">25</h3>
+                <h3 class="text-primary mb-0">{{date('d',strtotime($newsPost->start_date))}}</h3>
                 <p class="mb-0">Nov</p>
               </div>
               <div class="p-3">
-                <a href="blog-single.html" class="h4 font-primary text-dark">Cras
-                  sed elit sit amet.</a>
+                <a href="blog-single.html" class="h4 font-primary text-dark">{{$newsPost->title}}</a>
                 <p>by Admin</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-     
+     @endforeach
      
     </div>
   </div>
