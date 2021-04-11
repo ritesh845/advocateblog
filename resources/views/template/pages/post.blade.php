@@ -1,8 +1,8 @@
 <section class="bg-gray">
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             @foreach($posts as $post)
-            <div class="col-lg-4 py-50">
+            <div class="col-lg-4">
                 <!-- Blog Post -->
                 <article class="bg-white rounded mb-40">
                     <!-- Post Thumbnail -->
