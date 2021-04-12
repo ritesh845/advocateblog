@@ -59,7 +59,10 @@ class User extends Authenticatable
     public function specializations(){
         return $this->belongsToMany('App\Models\UserSpecialization', 'user_specialization','user_id','spec_code');
     }
-
+    public function specs(){
+        return $this->hasMany('App\Models\UserSpecialization','user_id','id');
+    }
+ 
     public function country(){
         return $this->belongsTo('App\Models\Country','country_code')->select('country_code','country_name');
     }
