@@ -35,7 +35,8 @@ class FrontendController extends Controller
         if($city_code != null){
             $users = User::where('city_code',$city_code)->get();
             $page_name = 'search';
-            return view('pages.index',compact('page_name','users'));
+            $city_name = City::firstWhere('city_code',$city_code)->city_name;
+            return view('pages.index',compact('page_name','users','city_name'));
 
         }else{
             $cities=  City::where('state_code',$state_code)->orderBy('city_name')->get();

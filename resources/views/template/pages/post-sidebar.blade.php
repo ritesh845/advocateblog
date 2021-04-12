@@ -1,4 +1,4 @@
-<div class="col-lg-4 py-100">
+<div class="col-lg-3 py-100">
 	<div class="bg-white px-4 ">
 		<div class="mb-50">
 			<h4 class="mb-3">Categories</h4>

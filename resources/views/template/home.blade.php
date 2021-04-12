@@ -82,7 +82,7 @@
               </div>
               <div class="card-body p-0">
                 <i class="square-icon translateY-33 rounded ti-bar-chart"></i>
-                <p class="card-text mx-2 mb-0">{!! Str::limit($serivcePost->body,40,$end="...") !!}</p>
+                <div class="card-text mx-2 mb-0 text-align-justify">{!! Str::limit($serivcePost->body,70,$end="...") !!}</div>
                 <a href="{{url('/'.(strtolower($serivcePost->category->catg_name)).'/'.$serivcePost->sefriendly)}}" class="btn btn-secondary translateY-25">Read
                   More</a>
               </div>
@@ -127,7 +127,9 @@
    
       <div class="col-lg-6">
         <h3 class="">{{$aboutPost->title}}</h3>
-         {!! Str::limit($aboutPost->body,500,$end='...') !!}
+         <div style="text-align:justify;min-height: 220px !important">
+             {!! Str::limit($aboutPost->body,500,$end='...') !!}
+         </div>
          <br>
          <a href="{{url('/'.(strtolower($aboutPost->category->catg_name)).'/'.$aboutPost->sefriendly)}}" class="btn btn-sm btn-primary"> Read More</a>
       </div>
