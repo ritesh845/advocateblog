@@ -17,4 +17,5 @@ class UserSpecialization extends Model
     public function specialization(){
  		return $this->belongsTo('App\Models\Specialization','spec_code');
  	}
+ 	
 }

@@ -72,6 +72,10 @@ class ProfileController extends Controller
 
         $specs  = Specialization::whereNotIn('spec_code',$spec_id)->orderBy('spec_name')->cursor();
         // return $specs;
+
+        return User::find(Auth::user()->id)->specs;
+
+
         return  view('backend.profile.specialization',compact('specs','user_specializations'));
     }
     public function specialization_store(Request $request){
