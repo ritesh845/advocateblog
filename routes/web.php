@@ -40,6 +40,13 @@ Route::patch('/profile/update/{id}',[App\Http\Controllers\ProfileController::cla
 Route::get('/specialization',[App\Http\Controllers\ProfileController::class, 'specialization'])->name('specialization');
 Route::post('/specialization/store',[App\Http\Controllers\ProfileController::class, 'specialization_store'])->name('specialization.store');
 
+Route::get('/practicing_court',[App\Http\Controllers\ProfileController::class, 'practicing_court'])->name('practicing_court');
+Route::post('/practicing_court',[App\Http\Controllers\ProfileController::class, 'practicing_court_store'])->name('practicing_court.store');
+
+Route::get('/state_court/{id}',[App\Http\Controllers\ProfileController::class, 'state_court'])->name('state_court');
+Route::get('/user_court_list/{id}/{id1}',[App\Http\Controllers\ProfileController::class, 'user_court_list'])->name('user_court_list');
+
+
 Route::get('/qualification',[App\Http\Controllers\ProfileController::class, 'qualification'])->name('qualification');
 Route::post('/qualification/store',[App\Http\Controllers\ProfileController::class, 'qualification_store'])->name('qualification.store');
 
@@ -62,6 +69,8 @@ Route::get('/domain/assgine/',[App\Http\Controllers\DomainController::class,'ass
 
 Route::get('/directory/{state_name}/{state_code}',[App\Http\Controllers\FrontendController::class,'directory_show'])->name('directory_show');
 Route::get('/directory/{state_name}/{city_name}/{city_code}',[App\Http\Controllers\FrontendController::class,'directory_show'])->name('directory_show');
+
+Route::get('/profile_show/{id}',[App\Http\Controllers\FrontendController::class,'profile_show'])->name('profile_show');
 
 //Admin Panel Category Manage
 

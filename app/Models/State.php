@@ -11,4 +11,8 @@ class State extends Model
      protected $table='states';
     protected $primaryKey='state_code';
     protected $guarded = [];
+    
+    public function users(){
+       return  $this->hasMany('App\Models\User','state_code','state_code');
+    }
 }

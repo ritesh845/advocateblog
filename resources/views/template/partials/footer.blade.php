@@ -1,101 +1,104 @@
 
 <!-- footer -->
 <footer class="bg-secondary">
-    <div class="py-100 border-bottom" style="border-color: #454547 !important">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="mb-5 mb-md-0 text-center text-md-left">
-                        <!-- logo -->
-                        <img src="{{asset('template/img/'.session('site_logo'))}}" alt="logo" class="mb-3">
-                        <p class="text-white mb-30 mt-3">
-                        Progressive Web App (PWA)<br>
-                        December 3, 2019
-                        Log Of Last Login History To Keep Check On Security Of Account
-                        November 27, 2019
-                        .</p>
-                        <!-- social icon -->
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a class="social-icon-outline" href="#">
-                                    <i class="ti-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="social-icon-outline" href="#">
-                                    <i class="ti-twitter-alt"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="social-icon-outline" href="#">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="social-icon-outline" href="#">
-                                    <i class="ti-linkedin"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <h4 class="text-white mb-4">Head Office</h4>
-                    <p class="text-white">Plot # 2, County Park
-                    Mahalaxmi Nagar, MR-5
-                    Indore-452010 (M.P)
-                    India<p>
-                </div>
-                <!-- footer links -->
-                <div class="col-lg-2 col-md-4 col-6">
-                <h4 class="text-white mb-4">Services</h4>
-                <ul class="footer-links">
-                     @foreach(session('catgs') as $catg)
-                        <li>
-                            <a href="{{$catg->catg_url !=null ? url($catg->catg_url) : '#'}}">{{$catg->catg_name}}</a>
-                        </li>
+    <!--<div class="py-100 border-bottom" style="border-color: #454547 !important">-->
+    <!--    <div class="container">-->
+    <!--        <div class="row">-->
+    <!--            <div class="col-lg-4 col-md-4">-->
+    <!--                <div class="mb-5 mb-md-0 text-center text-md-left">-->
+    <!--                     logo -->
+    <!--                    <img src="{{asset('template/img/'.session('site_logo'))}}" alt="logo" class="mb-3">-->
+    <!--                    <p class="text-white mb-30 mt-3">-->
+    <!--                    Progressive Web App (PWA)<br>-->
+    <!--                    December 3, 2019-->
+    <!--                    Log Of Last Login History To Keep Check On Security Of Account-->
+    <!--                    November 27, 2019-->
+    <!--                    .</p>-->
+    <!--                     social icon -->
+    <!--                    <ul class="list-inline">-->
+    <!--                        <li class="list-inline-item">-->
+    <!--                            <a class="social-icon-outline" href="#">-->
+    <!--                                <i class="ti-facebook"></i>-->
+    <!--                            </a>-->
+    <!--                        </li>-->
+    <!--                        <li class="list-inline-item">-->
+    <!--                            <a class="social-icon-outline" href="#">-->
+    <!--                                <i class="ti-twitter-alt"></i>-->
+    <!--                            </a>-->
+    <!--                        </li>-->
+    <!--                        <li class="list-inline-item">-->
+    <!--                            <a class="social-icon-outline" href="#">-->
+    <!--                                <i class="fa fa-instagram"></i>-->
+    <!--                            </a>-->
+    <!--                        </li>-->
+    <!--                        <li class="list-inline-item">-->
+    <!--                            <a class="social-icon-outline" href="#">-->
+    <!--                                <i class="ti-linkedin"></i>-->
+    <!--                            </a>-->
+    <!--                        </li>-->
+    <!--                    </ul>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 col-md-4 col-6">-->
+    <!--                <h4 class="text-white mb-4">Head Office</h4>-->
+    <!--                <p class="text-white">Plot # 2, County Park-->
+    <!--                Mahalaxmi Nagar, MR-5-->
+    <!--                Indore-452010 (M.P)-->
+    <!--                India<p>-->
+    <!--            </div>-->
+    <!--             footer links -->
+    <!--            <div class="col-lg-2 col-md-4 col-6">-->
+    <!--            <h4 class="text-white mb-4">Services</h4>-->
+    <!--            <ul class="footer-links">-->
+    <!--                 @foreach(session('catgs') as $catg)-->
+    <!--                    <li>-->
+    <!--                        <a href="{{$catg->catg_url !=null ? url($catg->catg_url) : '#'}}">{{$catg->catg_name}}</a>-->
+    <!--                    </li>-->
                         
-                    @endforeach
+    <!--                @endforeach-->
                  
-                </ul>
-                </div>  
+    <!--            </ul>-->
+    <!--            </div>  -->
                 
-                <div class="col-lg-3 col-md-12 offset-lg-1">
-                    <div class="mt-5 mt-lg-0 text-center text-md-left">
-                        <h4 class="mb-4 text-white">News Letter</h4>
-                        <p>Get our newsletter twice a week for more tips, tricks, and trends.</p>
-                        <form action="#" class="position-relative">
-                            <input type="text" class="form-control subscribe" name="subscribe" id="Subscribe" placeholder="Enter Your Email">
-                            <button class="btn-subscribe" type="submit" value="send">
-                                <i class="ti-arrow-right"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--            <div class="col-lg-3 col-md-12 offset-lg-1">-->
+    <!--                <div class="mt-5 mt-lg-0 text-center text-md-left">-->
+    <!--                    <h4 class="mb-4 text-white">News Letter</h4>-->
+    <!--                    <p>Get our newsletter twice a week for more tips, tricks, and trends.</p>-->
+    <!--                    <form action="#" class="position-relative">-->
+    <!--                        <input type="text" class="form-control subscribe" name="subscribe" id="Subscribe" placeholder="Enter Your Email">-->
+    <!--                        <button class="btn-subscribe" type="submit" value="send">-->
+    <!--                            <i class="ti-arrow-right"></i>-->
+    <!--                        </button>-->
+    <!--                    </form>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
     <!-- copyright -->
     <div class="pt-4 pb-3 position-relative">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-5">
                     <p class="text-white text-center text-md-left">
-                        <span class="text-primary">Advocate Mail</span> &copy; 2019 All Right Reserved</p>
+                        <span class="text-primary"><img src="{{asset('template/img/'.session('site_logo'))}}" alt="logo" width="100" class=""></span> &copy; 2019 All Right Reserved</p>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right">
                         <li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="#">Legal</a>
+                            <a class="font-secondary text-white" href="{{url('legal/disclaimer.html')}}">Disclaimer</a>
                         </li>
                         <li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="#">Sitemap</a>
+                            <a class="font-secondary text-white" href="{{url('legal/e-u-l-a.html')}}">EULA</a>
                         </li>
                         <li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="#">Privacy Policy</a>
+                            <a class="font-secondary text-white" href="{{url('legal/privacy-policy.html')}}">Privacy Policy</a>
                         </li>
                         <li class="list-inline-item ml-lg-3 my-lg-0 ml-2 my-2 ml-0">
-                            <a class="font-secondary text-white" href="#">Terms &amp; Conditions</a>
+                            <a class="font-secondary text-white" href="{{url('legal/t-o-s.html')}}">TOS</a>
+                        </li>
+                        <li class="list-inline-item ml-lg-3 my-lg-0 ml-2 my-2 ml-0">
+                            <a class="font-secondary text-white" href="{{url('legal/usage-policy.html')}}">T&C</a>
                         </li>
                     </ul>
                 </div>

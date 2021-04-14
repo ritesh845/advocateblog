@@ -20,7 +20,7 @@
                   <p class="m-1">Aadhar Card: {{$user->aadhar_card}}</p> 
               </div>
               <div class="col-md-6">
-                  <p class="m-1">Gender: {{Arr::get(GENDER,$user->gender)}}</p>
+                  <p class="m-1">Gender: {{$user->gender !=null ? Arr::get(GENDER,$user->gender) : ''}}</p>
                   <p class="m-1">Licence Number: {{$user->licence_no}}</p>
                   <p class="m-1">Date of Birth: {{date('d-m-Y',strtotime($user->dob))}}</p>
                   <p class="m-1">PAN Card: {{$user->pan_card}}</p> 

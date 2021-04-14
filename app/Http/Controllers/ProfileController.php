@@ -11,6 +11,9 @@ use App\Models\UserSpecialization;
 use App\Models\UserQualification;
 use App\Models\QualCatgMast;
 use App\Models\QualMast;
+use App\Models\CourtMast;
+use App\Models\CourtTypeMast;
+use App\Models\UserCourt;
 
 class ProfileController extends Controller
 {
@@ -27,6 +30,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = User::find(Auth::user()->id);
+        
         return view('backend.profile.index',compact('user'));
     }
     public function edit()
@@ -73,7 +77,7 @@ class ProfileController extends Controller
         $specs  = Specialization::whereNotIn('spec_code',$spec_id)->orderBy('spec_name')->cursor();
         // return $specs;
 
-        return User::find(Auth::user()->id)->specs;
+        //return User::find(Auth::user()->id)->specs;
 
 
         return  view('backend.profile.specialization',compact('specs','user_specializations'));
@@ -84,6 +88,25 @@ class ProfileController extends Controller
         $user->specializations()->sync($request->specc_code);
         return $request->all();
     }
+    
+    public function practicing_court(){
+// 		$court_types = CourtType::all();
+		$states = State::where('country_code',102)->get();
+
+		//$courts_code = Court::select('court_code')->where('user_id', Auth::user()->id)->get();
+		//$mast_courts = CourtMastHeader::whereNotIn('court_code', $courts_code->toArray())->get();
+		$courts = UserCourt::with('court_catg')->where('user_id',Auth::user()->id)->get();
+		// return $mast_courts;
+		return view('backend.profile.practicing_court',compact('states','courts'));
+	}
+    public function practicing_court_store(Request $request){
+		$user_id 	= Auth::user()->id;
+		$court 		= $request->court;
+		$user 		= User::find($user_id);
+		$user->courts()->sync($court);    
+		return 'Practicing courts updated successfully';
+	}
+    
     public function qualification(){
         $qual_catgs = QualCatgMast::orderBy('qual_catg_code')->get();
         $qualifications  = UserQualification::where('user_id',Auth::user()->id)->cursor();
@@ -125,11 +148,34 @@ class ProfileController extends Controller
 
         if(count($user_qual) ==0){
             UserQualification::create($data);           
-            return redirect()->route('qualification.index')->with('success','Qualification updated successfully');
+            return redirect()->route('qualification')->with('success','Qualification updated successfully');
         }
         else{
             return redirect()->route('qualification')->with('warning','Already inserted');
         }    
-        return $request->all();
+        // return $request->all();
     }
+    
+    public function state_court($state_code){
+        $courts = CourtMast::where('state_code',$state_code)->get();        
+            
+        $court_type = array();
+        foreach ($courts as $court) {
+            $court_type [] = $court->court_type;
+        }
+        $court_types = array();
+            
+        if(!empty($court_type)){
+            $court_types =   CourtTypeMast::whereIn('court_type',$court_type)->get();
+        }
+            // return $court_types;
+        return response()->json($court_types);
+    }
+    public function user_court_list($court_type,$state_code){
+		$courts_code = UserCourt::select('court_code')->where('user_id', Auth::user()->id)->get();
+		$mast_courts = CourtMast::whereNotIn('court_code', $courts_code->toArray())->where('court_type',$court_type)->where('state_code',$state_code)->get();
+
+		return response()->json($mast_courts);
+	}
+
 }

@@ -98,10 +98,10 @@
 <section class="about section-sm overlay" style="background-image: url({{asset('123.jpg')}});">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 ml-auto">
-                <div class="rounded p-sm-5 px-3 py-5 bg-secondary">
+            <div class="col-lg-6 ml-auto">
+                <div class="rounded p-sm-5 py-3  bg-secondary">
                     <h3 class="section-title section-title-border-half text-white">Feature in Advocate Mail?</h3>
-                    <p class="text-white mb-40">Unique features of advocate mail.</p>
+                    <!--<p class="text-white mb-40">Unique features of advocate mail.</p>-->
                     <div class="row">
                   
                       @foreach($featurePosts as $featurePost)
@@ -139,44 +139,44 @@
   </div>
 </section>
 
-<section class="section bg-gray p-4 pb-5">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-title section-title-border-gray">Recent Blogs</h2>
-      </div>
-    </div>
+<!--<section class="section bg-gray p-4 pb-5">-->
+<!--  <div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-12 text-center">-->
+<!--        <h2 class="section-title section-title-border-gray">Recent Blogs</h2>-->
+<!--      </div>-->
+<!--    </div>-->
     <!-- work slider -->
-    <div class="row work-slider">
-      {{-- <div class="col-lg-3 card px-0">
-        <div class="card-body p-0">
-          <img class=" w-100 h-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">
-          <div class="image-overlay p-4 w-100" style="position: absolute; top:118px">
+<!--    <div class="row work-slider">-->
+<!--      {{-- <div class="col-lg-3 card px-0">-->
+<!--        <div class="card-body p-0">-->
+<!--          <img class=" w-100 h-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">-->
+<!--          <div class="image-overlay p-4 w-100" style="position: absolute; top:118px">-->
             
-            <a class="h4 text-white" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>
-            <p class="text-white">by Admin</p>
-          </div>
-        </div>
-      </div> --}}
-      @foreach($blogPosts as $blogPost)
+<!--            <a class="h4 text-white" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>-->
+<!--            <p class="text-white">by Admin</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div> --}}-->
+<!--      @foreach($blogPosts as $blogPost)-->
 
-      <div class="col-lg-6 px-2">
-        <div class="work-slider-image" >
-          <img class="img-fluid w-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">
-          <div class="image-overlay">
-            {{-- <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}"> --}}
-              {{-- <i class="ti-search"></i> --}}
-            {{-- </a> --}}
-            <a class="h4" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>
-            <p>by Admin</p>
-          </div>
-        </div>
-      </div>
-      @endforeach
+<!--      <div class="col-lg-6 px-2">-->
+<!--        <div class="work-slider-image" >-->
+<!--          <img class="img-fluid w-100" src="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}" alt="work-image">-->
+<!--          <div class="image-overlay">-->
+<!--            {{-- <a class="popup-image" data-effect="mfp-zoom-in" href="{{asset($serivcePost->image_path !=null ? 'storage/'.$serivcePost->image_path : 'no_image.jpg')}}"> --}}-->
+<!--              {{-- <i class="ti-search"></i> --}}-->
+<!--            {{-- </a> --}}-->
+<!--            <a class="h4" href="{{url('/'.(strtolower($blogPost->category->catg_name)).'/'.$blogPost->sefriendly)}}">{{Str::limit($blogPost->title,35,$end="...")}}</a>-->
+<!--            <p>by Admin</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      @endforeach-->
      
-    </div>
-  </div>
-</section>
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
 <section class="mission section p-4 pb-5">
   <div class="container">

@@ -54,6 +54,9 @@
                 <div class="col-lg-12">
                     <ul class="list-inline text-lg-right text-center">
                         <li class="list-inline-item">
+                            <a href="{{url('directory')}}">Directory</a>
+                        </li>
+                        <li class="list-inline-item">
                             <a href="">Email Login</a>
                         </li>
                        @guest

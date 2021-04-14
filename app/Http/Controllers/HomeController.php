@@ -24,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-       
+        // $user = User::find(Auth::user()->id);
+        // return $user->attachPermission('1');
         return view('backend.home');
     }
 }

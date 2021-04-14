@@ -1,5 +1,10 @@
 <section class="bg-gray">
-    <div class="container mt-5 py-50">
+    <div class="container mt-5 pt-4">
+        <div class="row mb-5">
+            <div class="col-md-12 text-center">
+                <h2 class="test-dark text-capitalize">{{$page_name}}</h2>
+            </div>
+        </div>
         <div class="row">
             @foreach($posts as $post)
             <div class="col-lg-4">

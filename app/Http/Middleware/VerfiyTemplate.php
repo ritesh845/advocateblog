@@ -35,7 +35,7 @@ class VerfiyTemplate extends Middleware
             }else{
                 $catg_type = '2';
             }
-            $catgs =  CatgMast::select('catg_id','catg_name','catg_url','is_post')->where('catg_type',$catg_type)->orderBy('catg_order','asc')->get();
+            $catgs =  CatgMast::select('catg_id','catg_name','catg_url','is_post')->where(['catg_type' => $catg_type,'display_menu' => '1'])->orderBy('catg_order','asc')->get();
             Session::put('catgs',$catgs);
             $catg  = collect($catgs)->where('catg_name',ucfirst($catg_name))->first();
             if(!empty($catg)){

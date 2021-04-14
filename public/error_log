@@ -14,3 +14,4 @@
 [11-Apr-2021 08:27:43 UTC] PHP Fatal error:  Default value for parameters with a class type hint can only be NULL in /home/advocate/public_html/advocate/vendor/phpunit/phpunit/src/Framework/Assert/Functions.php on line 89
 [11-Apr-2021 08:29:59 UTC] PHP Warning:  Unsupported declare 'strict_types' in /home/advocate/public_html/advocate/vendor/phpunit/phpunit/src/Framework/Assert/Functions.php on line 1
 [11-Apr-2021 08:29:59 UTC] PHP Fatal error:  Default value for parameters with a class type hint can only be NULL in /home/advocate/public_html/advocate/vendor/phpunit/phpunit/src/Framework/Assert/Functions.php on line 89
+[12-Apr-2021 08:48:50 UTC] PHP Fatal error:  Cannot redeclare App\Models\User::specs() in /home/advocate/public_html/advocate/app/Models/User.php on line 65

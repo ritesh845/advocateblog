@@ -17,7 +17,7 @@
 						</select>
 
 						@error('qual_catg_code')
-							<span class="invalid-feedback text-danger" role="alert">
+							<span class=" text-danger" role="alert">
 							<strong>{{ $message }}</strong>
 							</span>
 						@enderror
@@ -27,7 +27,7 @@
 						<select class="form-control" name="qual_code" id="qual_sub" required="required">
 						</select>
 						@error('qual_code')
-							<span class="invalid-feedback text-danger" role="alert">
+							<span class=" text-danger" role="alert">
 							<strong>{{ $message }}</strong>
 							</span>
 						@enderror
@@ -38,7 +38,7 @@
 						<label>Passing Year <span class="text-danger">*</span></label>
 						<input type="text" name="pass_year" placeholder="Enter passing year" class="form-control" value="{{old('pass_year')}}" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" required="required">
 						@error('pass_year')
-							<span class="invalid-feedback text-danger" role="alert">
+							<span class=" text-danger" role="alert">
 							<strong>{{ $message }}</strong>
 							</span>
 						@enderror
@@ -47,7 +47,7 @@
 						<label for="pass_perc">Passing Percentage <span class="text-danger">*</span></label>
 						<input type="text" name="pass_perc" placeholder="Enter passing Percentage" class="form-control" value="{{old('pass_perc')}}" oninput="this.value = this.value.replace(/[^0-9|.]/g, '').replace(/(\..*)\./g, '$1');" required="required">
 						@error('pass_perc')
-							<span class="invalid-feedback text-danger" role="alert">
+							<span class=" text-danger" role="alert">
 							<strong>{{ $message }}</strong>
 							</span>
 						@enderror
@@ -64,7 +64,7 @@
 							<option value="3" {{old('pass_division')=='3' ? 'selected' : '' }}>3rd</option>
 						</select>
 						@error('pass_division')
-							<span class="invalid-feedback text-danger" role="alert">
+							<span class=" text-danger" role="alert">
 							<strong>{{ $message }}</strong>
 							</span>
 						@enderror

@@ -39,11 +39,17 @@ class FrontendController extends Controller
             return view('pages.index',compact('page_name','users','city_name'));
 
         }else{
-            $cities=  City::where('state_code',$state_code)->orderBy('city_name')->get();
+            $cities=  City::has('users')->with('users')->where('state_code',$state_code)->orderBy('city_name')->get();
+            $s_name = State::firstWhere('state_code',$state_code)->state_name;
             $page_name = 'directory_show';
-            return view('pages.index',compact('page_name','cities','state_name'));
+            return view('pages.index',compact('page_name','cities','s_name','state_name'));
 
         }
+    }
+    public function profile_show($id){
+        $page_name = 'profile_show';
+        $user = User::find($id);
+        return view('pages.index',compact('page_name','user'));
     }
 
     public function get_cities($id)

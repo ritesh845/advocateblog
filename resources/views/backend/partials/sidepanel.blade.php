@@ -34,6 +34,8 @@
 
     
 @endrole
+
+@permission('add_post')
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
         aria-expanded="true" aria-controls="collapseOne">
@@ -48,6 +50,8 @@
         </div>
     </div>
 </li>
+@endpermission
+
 
 @role('user')
 <!-- Nav Item - Pages Collapse Menu -->
@@ -62,6 +66,7 @@
             <a class="collapse-item" href="{{route('profile.index')}}">Profile</a>
             <a class="collapse-item" href="{{route('profile.edit')}}">Edit Profile</a>
             <a class="collapse-item" href="{{route('specialization')}}">Specialization</a>
+             <a class="collapse-item" href="{{route('practicing_court')}}">Practicing Court</a>
             <a class="collapse-item" href="{{route('qualification')}}">Qualification</a>
         </div>
     </div>
