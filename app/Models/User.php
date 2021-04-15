@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Laratrust\Traits\LaratrustUserTrait;
-
+use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
-    use LaratrustUserTrait, HasFactory;
+    use LaratrustUserTrait, HasFactory,Notifiable;
     
 
     /**

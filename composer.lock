@@ -1671,6 +1671,10 @@
                 "laravel6 Captcha",
                 "laravel6 Security"
             ],
+            "support": {
+                "issues": "https://github.com/mewebstudio/captcha/issues",
+                "source": "https://github.com/mewebstudio/captcha/tree/3.2.5"
+            },
             "time": "2021-01-17T21:30:23+00:00"
         },
         {
@@ -7407,5 +7411,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

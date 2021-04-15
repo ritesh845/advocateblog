@@ -53,3 +53,16 @@ function fn_get_role_catgs(role_id,oldCatgId =''){
     }
    
 }
+function fn_user_approval(user_id){
+    $.ajax({
+        type:'GET',
+        url:"/userApproval/"+user_id,
+        success:function(res){
+            if(res.status == 'success'){
+                alert(res.message)
+                window.location.reload();
+            }
+        }
+    });
+}
+

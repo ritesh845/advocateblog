@@ -29,14 +29,16 @@
   						</tr>
   					</thead>
   					<tbody>
-  						<tr>
-  							<td></td>
-  							<td></td>
-  							<td></td>
-  							<td></td>
-  							<td></td>
-  							<td></td>
-  						</tr>
+  					    @foreach($users as $key => $user)
+      						<tr>
+      							<td>{{$key + 1}}</td>
+      							<td>{{$user->name}}</td>
+      							<td>{{$user->email}}</td>
+      							<td>{{$user->mobile}}</td>
+      							<td>{{$user->domain_url}}</td>
+      							<td></td>
+      						</tr>
+  						@endforeach
 	  				</tbody>
 	  			</table>
 	  		</div>

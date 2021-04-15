@@ -23,6 +23,9 @@
     <link href="{{asset('css/datepicker.css')}}" rel="stylesheet">
     <link href="{{asset('css/parts-selector.css')}}" rel="stylesheet">
     <script src="{{asset('js/parts-selector.js')}}"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
 
 </head>
 

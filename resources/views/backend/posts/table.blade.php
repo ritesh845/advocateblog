@@ -1,4 +1,4 @@
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped" id="tablePost">
 	<thead>
 		<tr>
 			<th>#</th>
@@ -33,4 +33,8 @@
 	@endforeach
 	</tbody>
 </table>
-
+<script>
+    $(document).ready(function(){
+        $('#tablePost').DataTable();
+    });
+</script>

@@ -146,7 +146,7 @@
            <label>State <span>*</span> </label>
             <select class="form-control" id="state" name="state_code">
                 @foreach($states as $state)
-                 <option value="{{$state->state_code}}" {{(old('city_code') ?? $user->state_code) === $state->state_code ? 'selected' : '' }}>{{$state->state_name}}</option>
+                 <option value="{{$state->state_code}}" {{(old('state_code') ?? $user->state_code) == $state->state_code ? 'selected=selected' : '' }} >{{$state->state_name}}</option>
                  
                  @endforeach
                  @error('state_code')
@@ -209,11 +209,12 @@
 
    $(document).ready(function(){
      $('.datepicker').datepicker();
-      $('#state').on('change',function(e){
+        $('#state').on('change',function(e){
             e.preventDefault();
             var state_code = $(this).val();
             fn_state_code(state_code);
         });
+        
         var stateCode = "{{old('state_code') ?? $user->state_code}}";
         var cityCode = "{{old('city_code') ?? $user->city_code}}";
         if(stateCode !=''){
